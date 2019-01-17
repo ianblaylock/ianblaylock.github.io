@@ -8,8 +8,6 @@ return document.getElementById(p1__34_SHARP_);
 }),cljs.core.juxt.call(null,(function (p1__35_SHARP_){
 return [cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__35_SHARP_),"Li"].join('');
 }),cljs.core.identity)),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, ["obsMonitor","quickHydroBrief","hydroDataViewer"], null)));
-cljs.core.prn.call(null,li_id_map_54);
-
 var seq__36_55 = cljs.core.seq.call(null,li_id_map_54);
 var chunk__37_56 = null;
 var count__38_57 = (0);
@@ -23,6 +21,8 @@ div_61.style.display = "none";
 
 li_60.addEventListener("click",((function (seq__36_55,chunk__37_56,count__38_57,i__39_58,vec__40_59,li_60,div_61,li_id_map_54){
 return (function (){
+cljs.core.prn.call(null,li_60);
+
 var seq__43 = cljs.core.seq.call(null,cljs.core.keys.call(null,li_id_map_54));
 var chunk__44 = null;
 var count__45 = (0);
@@ -32,7 +32,7 @@ if((i__46 < count__45)){
 var li_ = cljs.core._nth.call(null,chunk__44,i__46);
 li_.style.backgroundColor = ((cljs.core._EQ_.call(null,li_,li_60))?"777777":"aaaaaa");
 
-cljs.core.prn.call(null,li_id_map_54.call(null,li_));
+li_id_map_54.call(null,li_).style.display = ((cljs.core._EQ_.call(null,div_61,li_id_map_54.call(null,li_)))?"block":"none");
 
 
 var G__62 = seq__43;
@@ -63,7 +63,7 @@ continue;
 var li_ = cljs.core.first.call(null,seq__43__$1);
 li_.style.backgroundColor = ((cljs.core._EQ_.call(null,li_,li_60))?"777777":"aaaaaa");
 
-cljs.core.prn.call(null,li_id_map_54.call(null,li_));
+li_id_map_54.call(null,li_).style.display = ((cljs.core._EQ_.call(null,div_61,li_id_map_54.call(null,li_)))?"block":"none");
 
 
 var G__70 = cljs.core.next.call(null,seq__43__$1);
@@ -118,6 +118,8 @@ div_87.style.display = "none";
 
 li_86.addEventListener("click",((function (seq__36_55,chunk__37_56,count__38_57,i__39_58,vec__47_85,li_86,div_87,seq__36_79__$1,temp__5535__auto___78,li_id_map_54){
 return (function (){
+cljs.core.prn.call(null,li_86);
+
 var seq__50 = cljs.core.seq.call(null,cljs.core.keys.call(null,li_id_map_54));
 var chunk__51 = null;
 var count__52 = (0);
@@ -127,7 +129,7 @@ if((i__53 < count__52)){
 var li_ = cljs.core._nth.call(null,chunk__51,i__53);
 li_.style.backgroundColor = ((cljs.core._EQ_.call(null,li_,li_86))?"777777":"aaaaaa");
 
-cljs.core.prn.call(null,li_id_map_54.call(null,li_));
+li_id_map_54.call(null,li_).style.display = ((cljs.core._EQ_.call(null,div_87,li_id_map_54.call(null,li_)))?"block":"none");
 
 
 var G__88 = seq__50;
@@ -158,7 +160,7 @@ continue;
 var li_ = cljs.core.first.call(null,seq__50__$1);
 li_.style.backgroundColor = ((cljs.core._EQ_.call(null,li_,li_86))?"777777":"aaaaaa");
 
-cljs.core.prn.call(null,li_id_map_54.call(null,li_));
+li_id_map_54.call(null,li_).style.display = ((cljs.core._EQ_.call(null,div_87,li_id_map_54.call(null,li_)))?"block":"none");
 
 
 var G__96 = cljs.core.next.call(null,seq__50__$1);
