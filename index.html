@@ -1,73 +1,184 @@
 <!DOCTYPE html>
 <html>
-    <head>
-	<meta charset="UTF-8">
-	<style> 
-	 #master {
-	     position: fixed;
-	     padding: 0; margin: 0;
-	     top: 0px; bottom: 0px; left: 0px; right: 0px;
-	     background-color: #ffffee;
-	 }
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+	color: rgb(250,240,240);
+	background-color: rgb(20,20,20);
+}
+#mainContainer {
+	display: flex;
+	flex-direction: column;
+}
+#header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0; padding: 0px 10px 0px 10px;
+	border-color: #ffffff;
+	border-width: 0px 0px 1px 0px;
+	border-style: solid;
+}
 
-	 #name {
-	     position: absolute;
-	     padding: 0; margin: 0;
-	     border-width: 0px 0px 1px 0;
-	     border-color: #111111;
-	     font-size: 2em;
-	     background-color: #555555;
-	     color: rgb(236,88,0);
-	     width: 100%;
-	     height: 40px;
-	 }
+@media screen and (max-width: 600px) {
+	#header {flex-direction: column;}
+	#tagLine p {text-align: center;}
+}
+#header h1 {margin: 0; padding: 0; text-align: center;}
 
-	 #sideMenu {
-	     position: absolute;
-	     padding: 0; margin: 0
-	     border-width: 0px 1px 0px 0px;
-	     border-color: #111111;
-	     background-color: #aaaaaa;
-	     width: 200px; top: 41px;
-	     left: 0px;
-	     height: 100%;
-	 }
-	 	 #programContainer {
-	     position: absolute;
-	     padding: 0; margin: 0;
-	     background-color: #bbbbbb;
-	     left: 200px; top: 41px;
-	     width: 100%; height: 100%;
-	 }
-	 #sideMenu ul {
-	     list-style-type: none;
-	     margin: 0; padding: 0;
-	     left: 10px;
-	 }
-	</style>
-    </head>
-    <body>
-	<script src="out/main.js" type="text/javascript"></script>
-	<div id="master">
-	    <div id="name">Ian Blaylock</div>
-	    <div id="sideMenu">
+#tagLine {
+   display: flex;
+   flex-direction: column;
+   margin: 0; padding: 0;
+   align-items: center;
+}
+
+#tagLine p {margin: 0; padding: 0; text-align: justify;}
+#navMenu1 {
+	border-style: solid;
+	border-color: #ffffff;
+	border-width: 0px 0px 1px 0px;
+}
+
+#navMenu1 ul {
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: flow-start;
+	margin: 0px 10px 0px 0px; 
+	padding: 0;
+}
+
+#navMenu1 ul li {
+	padding: 0px 10px 0px 10px;
+}
+
+@media screen and (max-width: 600px) {
+	#navMenu1 ul {
+		margin: 0; padding: 0;
+		justify-content: space-around;
+	}
+}
+
+#level1Container {
+	flex-grow: 1;
+	overflow: auto;
+}
+
+.level1Menu {
+	width: 150px;
+	border-style: solid;
+	border-color: #ffffff;
+	border-width: 1px;
+}
+.level1Section {
+	display: none;
+}
+
+#softwareProjects ul {
+	list-style-type: none;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: wrap-start;
+	align-items: stretch;
+	padding: 0; margin: 0;
+	border-style: solid;
+	border-color: #ffffff;
+	border-width: 0px 0px 1px 0px;
+}
+
+@media screen and (max-width: 600px) {
+	#softwareProjects ul {
+		justify-content: space-around;
+	}
+}
+#softwareProjects ul li {
+	padding: 0px 10px 0px 10px;
+}
+
+li:hover {color: rgb(236,88,0);}
+
+</style>
+</head>
+<body> 
+<div id="mainContainer">
+	<div id="header">
+		<h1>Ian Blaylock</h1>
+		<div id="tagLine">
+			<p>Software Developer</p>
+			<p>Peachtree City, GA</p>
+		</div>
+	</div>
+	<div id="navMenu1">
 		<ul>
-		    <li id="obsMonitorLi">ObsMonitor</li>
-		    <li id="quickHydroBriefLi">QuickHydroBrief</li>
-		    <li id="hydroDataViewerLi">HydroDataViewer</li>
+			<li id="aboutMeListItem">About Me</li>
+			<li id="softwareProjectsListItem">Projects</li>
 		</ul>
-	    </div>
-	    <div id="programContainer">
-		<div id="obsMonitor" class="projectSummary">
-		    <b>ObsMonitor</b> is a program
+	</div>
+	<div id="level1Container">
+		<div id="aboutMe" class="level1Section">
+			check one two
 		</div>
-		<div id="quickHydroBrief" class="projectSummary">
-		    <b>QuickHydroBrief</b> is also a program.
+		<div id="softwareProjects" class="level1Section">
+			<ul>
+				<li id="obsMonitorMenuItem">ObsMonitor</li>
+				<li id="hydroDataViewerMenuItem">HydroDataViewer</li>
+				<li id="quickHydroBriefMenuItem">QuickHydroBrief</li>
+				<li id="puertoRicoRadarMenuItem">Puerto Rico Radar Mosaic</li>
+			</ul>
+			<div id="softwareContainer">
+				<div id="obsMonitor" class="softwareSection">
+				</div>
+				<div id="hydroDataViewer" class="softwareSection">
+				</div>
+				<div id="quickHydroBrief" class="softwareSection">
+				</div>
+				<div id="puertoRicoRadar" class="softwareSection">
+				</div>
+			</div>
 		</div>
-		<div id="hydroDataViewer" class="projectSummary">
-		    <b>HydroDataViewer</b> is a third program.
-		</div>
-	    </div>
-	</div>	
-    </body>
+	</div>
+</div>
+<script>
+function hideAllLv11Sections() {
+	let elems = document.getElementsByClassName("level1Section");
+	for(var i = 0; i < elems.length; i++) {
+		elems[i].style.display = "none";
+	}
+}
+
+function displayLvl1Section(elemId) {
+	hideAllLv11Sections();
+	document.getElementById(elemId).style.display = "block";
+}
+var lvl1Dict = {"aboutMeListItem": "aboutMe",
+				"softwareProjectsListItem": "softwareProjects"};
+
+for (var key in lvl1Dict) {
+	let value = lvl1Dict[key];
+	document.getElementById(key)
+		.addEventListener("click", function() {displayLvl1Section(value);});}		
+		
+var softwareDict = {"puertoRicoRadarMenuItem": "puertoRicoRadar",
+					"obsMonitorMenuItem": "obsMonitor",
+					"hydroDataViewerMenuItem": "hydroDataViewer",
+					"quickHydroBriefMenuItem": "quickHydroBrief"};
+					
+function hideAllSoftwareSections() {
+	let elems = document.getElementsByClassName("softwareSection");
+	for (var i = 0; i < elems.length; i++) {
+		elems[i].style.display = "none";
+	}
+}
+
+function displaySoftwareSection(elemId) {
+	hideAllSoftwareSections();
+	document.getElementById(elemId).style.display = "block";}
+
+for (var key in softwareDict) {
+	let value = softwareDict[key];
+	document.getElementById(key)
+		.addEventListener("click", function() {displaySoftwareSection(value);});}
+</script>
 </html>
