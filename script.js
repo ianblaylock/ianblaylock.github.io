@@ -1,5 +1,5 @@
 function hideAllLv11Sections() {
-    let elems = document.getElementsByClassName("level1Section");
+    let elems = document.getElementsByClassName("level1Section"); 
     for(var i = 0; i < elems.length; i++) {
 	elems[i].style.display = "none";
     }
@@ -37,3 +37,5 @@ for (var key in softwareDict) {
     let value = softwareDict[key];
     document.getElementById(key)
 	.addEventListener("click", function() {displaySoftwareSection(value);});}
+
+console.log("blah");
