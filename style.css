@@ -161,8 +161,9 @@ li a:hover {color: rgb(236,88,0);}
 
 #obsMonitorHeader {
     width: 100%;
-    x-overflow: hidden;
+    x-overflow: hidden;   
 }
+
 
 #obsMonitor ul li {
     list-style-type: circle;

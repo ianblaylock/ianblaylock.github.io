@@ -17,6 +17,7 @@
 	<ul>
 	  <li id="aboutMeListItem">About Me</li>
 	  <li id="softwareProjectsListItem">Projects</li>
+	  <li id="skillsListItem">Skills</li>
 	</ul>
       </div>
       <div id="level1Container">
@@ -33,12 +34,11 @@
 	  <div id="softwareContainer">
 	    <div id="obsMonitor" class="softwareSection">
 	      <div id="obsMonitorHeader">
-		<p>
-		  <h2>ObsMonitor</h2>
-		  <b>ObsMonitor</b> is an application I designed and implemented for the display of decoded weather observations, operationally used by 45+ National Weather Service offices nationwide. </p>		
+		<h3>About ObsMonitor</h3>
+		<p><b>ObsMonitor</b> is an application I designed and implemented for the display of decoded weather observations. It is operationally used by 45+ National Weather Service offices nationwide. </p>		
 		<div id="imgVaExample" class="imgFrame">
 		  <img src="img/vaExample.png" alt="ObsMonitor in action" >
-		  <div class="imgCaption">Highlighting freezing conditions with ObsMonitor</div>
+		  <div class="imgCaption">ObsMonitor highlighting freezing conditions across<br> Virginia with obs sorted by temperature and different row colors.</div>
 		</div>
 
 		<p>It consists of a tabbed interface, each tab of which contains an auto-updating table of decoded weather displays from a variety of sources. </p>
@@ -59,18 +59,20 @@
 		
 		<p>Typically, geographic filters are used for specifying table locations while parametric filters are used for row highlighting criteria. However both location settings and highlighting settings are able to use both as the end-user sees fit.</p>
 
-		<p>Nearly all elements of each table can be configured:</p>
+		<h3>Column Configuration</h3>
+		<p>Any meteorological parameter that is regularl reported in encoded formats may be displayed in its own column. The user may choose from a number of settings, such as the name displayed in the column header, horizontal alignment, numeric precision, column width, and the colorscale used.</p>
+
+		<p>These column configurations may be saved and re-loaded in a different table configuration to make the configuration of subsequent tables more convenient.</p>
+		
+		<h3>Colorscale Configuration</h3>
+		<p> There are three different types of colorscales supported in ObsMonitor: <i>range</i>, <i>gradient</i>, and <i>discrete</i>. Range and gradient colorscales are exclusively applied to numeric parameters such as temperature, relative humidity, and hourly rainfall. Discrete colorscales shade based on string equivalence and are applied to non-numeric parameters like geographic metadata.</p>
+
+		<p>Range colorscales are defined as a stepwise numeric function that returns a defined color. Gradient colorscales define distinct numeric bounds to which a value is compared and a color is linearly interpolated. These two types are interconvertable. </p>
+
+		<h3>Multivariate Sorting</h3>
+		<p>Complex multivariate sorting is supported, with users able to sort the columns by any number of meteorological parameters. For example, a couple could sort the locations alphabetically by state with a secondary sorting criteria by state if they want. Sorting rules invariable follow a "nulls last" policy, where defined values, regardless of magninude, always appear first.</p>
+				
 	      </div>
-	      <!--
-	      <ul>
-		<li><a href="#obsMonitorLocations">Table Locations</a></li>
-		<li><a href="#obsMonitorColumns">Meteorological Parameters</a></li>
-		<li><a href="#obsMonitorHighlighting">Hazard Highlighting</a></li>
-		<li><a href="#obsMonitorSorting">Table Sorting</a></li>
-		<li><a href="#obsMonitorUnits">Display Units</a></li>
-		<li><a href="#obsMonitorLookAndFeel">Look and Feel</a></li>
-	      </ul>
-	      -->
 	    </div>
 	    <div id="hydroDataViewer" class="softwareSection">
 	    </div>
