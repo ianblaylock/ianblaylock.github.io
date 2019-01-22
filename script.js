@@ -3,6 +3,7 @@ var lvl1Dict = {"aboutMeMenuItem": "aboutMe",
 		"skillsMenuItem": "skillsList"};
 
 var softwareDict = {"obsMonitorMenuItem": "obsMonitor",
+		    "gageScatterplotMenuItem": "gageScatterplot",
 		    "hydroDataViewerMenuItem": "hydroDataViewer",
 		    "quickHydroBriefMenuItem": "quickHydroBrief"};
 
@@ -36,6 +37,7 @@ function initializeMenus() {
 	}
     }
 }
+
 initializeMenus();
 selectMenuItemInDict(lvl1Dict,"aboutMeMenuItem");
 selectMenuItemInDict(softwareDict,"obsMonitorMenuItem");

@@ -17,25 +17,27 @@
 	<ul>
 	  <li id="aboutMeMenuItem">About Me</li>
 	  <li id="softwareProjectsMenuItem">Projects</li>
-	  <li id="skillsMenuItem">Skills</li>
+	  <li id="skillsMenuItem">Skills &amp; Education</li>
 	</ul>
       </div>
       <div id="level1Container">
 	<div id="aboutMe" class="level1Section">
 	  <h3>A bit about me...</h3>
-	  <div id="myFace" class="imgFrame">
-	    <img src="img/myface.jpg" alt="A photo of me">
-	  </div>
-	  <p>I'm a hydrometeorologist for the National Weather Service. My primary job is to quality control hourly rainfall data to help provide accurate river forecasts. And I do!</p>
-	  <p>That said, it's not always raining, which frees up time to create award-winning data visualization tools to help analyze meteorological data in all sorts of ways! I've made hydrograph displays, spatial rainfall maps, decoded weather observation tables, and scatterplots for quality control. I've made tools to alert staff when river gages cross significant thresholds and when important text bulletins are received. </p>
-	  <p>Check out the <span class="clickspan" onclick="selectMenuItemInDict(lvl1Dict,'softwareProjectsMenuItem')">Projects</span> section for more information.</p>	  
+	  <div id="myFace">
+	    <img  src="img/myface.jpg" alt="A photo of me">
+	  </div> 
+	  <p>I'm a hydrometeorologist for the National Weather Service. My primary job is to quality control hourly rainfall data to help provide accurate river forecasts. And I do! That said, it's not always raining, which frees up time to create award-winning data visualization software.</p>
+
+	  <p> I've made software for quickly viewing and editing hydrographs, rainfall mapping software for comparing mapped estimates with manual observations on the ground, flexible color-coded tabular displays of decoded weather observations, and scatterplots that help compare preliminary radar estimated rainfall. Tools to alert staff when river gages cross significant thresholds and when important text bulletins are received. Another widely used tool of mine helps manage XML configuration files across over a dozen workstations using a simple interface.</p>
+
+	  <p>Essentially, simplying the analysis of complex hydrometeorological phenomena by creating highly customizable software is my specialty. <span class="clickspan" onclick="selectMenuItemInDict(lvl1Dict,'softwareProjectsMenuItem')">Check out my projects page!</span></p>
 	</div>
 	<div id="softwareProjects" class="level1Section">
 	  <ul>
 	    <li id="obsMonitorMenuItem">ObsMonitor</li>
+	    <li id="gageScatterplotMenuItem">GageScatterlpot</li>
 	    <li id="hydroDataViewerMenuItem">HydroDataViewer</li>
-	    <li id="quickHydroBriefMenuItem">QuickHydroBrief</li>
-	    <li id="puertoRicoRadarMenuItem">Puerto Rico Radar Mosaic</li>
+	    <li id="quickHydroBriefMenuItem">QuickHydroBrief</li>	    
 	  </ul>
 	  <div id="softwareContainer">
 	    <div id="obsMonitor" class="softwareSection">
@@ -89,15 +91,31 @@
 		<p>Complex multivariate sorting is supported, with users able to sort the columns by any number of meteorological parameters. For example, a couple could sort the locations alphabetically by state with a secondary sorting criteria by state if they want. Sorting rules invariable follow a "nulls last" policy, where defined values, regardless of magninude, always appear first.</p>				
 	      </div>
 	    </div>
+	    <div id="gageScatterplot" class="softwareSection">
+	    </div>
 	    <div id="hydroDataViewer" class="softwareSection">
+	      <div class="tabbedVideoContainer">
+		<div class="videoPanel">
+		  <video id="michael">
+		    <source src="vid/michaelAccumulation.mp4" type="video/mp4"></source>
+		  </video>
+		  <video id="florence">
+		    <source src="vid/florenceAccumulation.mp4" type="video/mp4"></source>
+		  </video>
+		</div>
+		<div class="buttonPanel">
+		  <button type="button" onclick="playVideo('florence')">Florence</button>
+		  <button type="button" onclick="playVideo('michael')">Michael</button>
+		</div>
+	      </div>
 	    </div>
 	    <div id="quickHydroBrief" class="softwareSection">
 	    </div>
-	    <div id="puertoRicoRadar" class="softwareSection">
 	    </div>
 	  </div>
 	</div>
 	<div id="skillsList" class="level1Section">
+	  Here's where I tell you about my skillzzzzz
 	</div>
       </div>
     </div>
