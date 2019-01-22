@@ -1,41 +1,41 @@
-function hideAllLv11Sections() {
-    let elems = document.getElementsByClassName("level1Section"); 
-    for(var i = 0; i < elems.length; i++) {
-	elems[i].style.display = "none";
-    }
-}
+var lvl1Dict = {"aboutMeMenuItem": "aboutMe",
+		"softwareProjectsMenuItem": "softwareProjects",
+		"skillsMenuItem": "skillsList"};
 
-function displayLvl1Section(elemId) {
-    hideAllLv11Sections();
-    document.getElementById(elemId).style.display = "block";
-}
-var lvl1Dict = {"aboutMeListItem": "aboutMe",
-		"softwareProjectsListItem": "softwareProjects"};
-
-for (var key in lvl1Dict) {
-    let value = lvl1Dict[key];
-    document.getElementById(key)
-	.addEventListener("click", function() {displayLvl1Section(value);});}		
-
-var softwareDict = {"puertoRicoRadarMenuItem": "puertoRicoRadar",
-		    "obsMonitorMenuItem": "obsMonitor",
+var softwareDict = {"obsMonitorMenuItem": "obsMonitor",
 		    "hydroDataViewerMenuItem": "hydroDataViewer",
 		    "quickHydroBriefMenuItem": "quickHydroBrief"};
 
-function hideAllSoftwareSections() {
-    let elems = document.getElementsByClassName("softwareSection");
-    for (var i = 0; i < elems.length; i++) {
-	elems[i].style.display = "none";
+function setTextColorByPropertyValue(elemId,colorTag) {
+    document.getElementById(elemId).style.color =
+	getComputedStyle(document.body).getPropertyValue(colorTag);
+}
+
+function setElementDisplayById(elemId,displayValue) {
+    document.getElementById(elemId).style.display = displayValue;
+}
+
+function selectMenuItemInDict(dict,dictKey) {
+    for (var key in dict) {
+	let menuElemId = key;
+	let pageElemId = dict[key];
+	setTextColorByPropertyValue(menuElemId,(menuElemId === dictKey) ? '--menu-selection-text-color' : '--main-text-color');
+	setElementDisplayById(pageElemId,(menuElemId === dictKey) ? "block" : "none");	
     }
 }
 
-function displaySoftwareSection(elemId) {
-    hideAllSoftwareSections();
-    document.getElementById(elemId).style.display = "block";}
-
-for (var key in softwareDict) {
-    let value = softwareDict[key];
-    document.getElementById(key)
-	.addEventListener("click", function() {displaySoftwareSection(value);});}
-
-console.log("blah");
+function initializeMenus() {
+    let dictList = [lvl1Dict, softwareDict];
+    for (var i = 0; i < dictList.length; i++) {
+	let localDict = dictList[i];
+	for (var key in localDict) {
+	    let localKey = key;
+	    let value = localDict[localKey];
+	    document.getElementById(localKey)
+		.addEventListener("click", function() {selectMenuItemInDict(localDict,localKey);});
+	}
+    }
+}
+initializeMenus();
+selectMenuItemInDict(lvl1Dict,"aboutMeMenuItem");
+selectMenuItemInDict(softwareDict,"obsMonitorMenuItem");

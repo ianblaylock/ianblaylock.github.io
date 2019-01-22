@@ -1,3 +1,8 @@
+:root {
+    --main-text-color: #e6dcdc;
+    --menu-selection-text-color: #efcc00;
+}
+
 @font-face {
     font-family: b612;
     src: url(font/B612-Regular.ttf);
@@ -7,16 +12,22 @@
     font-family: b612-italic; 
     src: url(font/B612-Italic.ttf);}
 
+* {color: rgb(230,220,220); }
 
 body {
-    color: rgb(230,220,220);
     background-color: rgb(20,20,20);
     x-overflow: hidden;
     font-family: b612;
 }
+
 b {
     color: rgb(200,210,250);
 }
+
+.clickspan {
+    color: var(--menu-selection-text-color);
+}
+
 #mainContainer {
     display: flex;
     flex-direction: column;
@@ -45,6 +56,7 @@ b {
 }
 
 #tagLine p {margin: 0; padding: 0; text-align: justify;}
+
 #navMenu1 {
     border-style: solid;
     border-color: #ffffff;
@@ -114,7 +126,7 @@ li a:hover {color: rgb(236,88,0);}
     flex-flow: column wrap;
 }
 
-.softwareSection p {
+.level1Section p {
     align: justify;
     text-align: justify;
     margin-left: 1em; margin-right: 1em;
@@ -130,6 +142,21 @@ li a:hover {color: rgb(236,88,0);}
 }
 
 @media screen and (min-width: 600px) {  .imgFrame { width: 66%; }}
+
+.imgFrame {
+    float: right;    
+    max-width: 500px;
+    margin: 10px;
+    padding: 10px;
+}
+
+#myFace {
+    float: top right; margin: 1em 1em 0 0; padding: 0; width: 250px; 
+    height: auto; overflow:
+}
+
+
+#myFace img { border-radius: 10px;}
 
 .imgFrame img {  
     padding-left: 1em;  
@@ -150,13 +177,6 @@ li a:hover {color: rgb(236,88,0);}
     border-color: #ffffff;    
     border-width: 0px 0px 1px 0px;
     font-size: 0.7em;
-}
-
-#imgVaExample {
-    float: right;    
-    max-width: 500px;
-    margin: 10px;
-    padding: 10px;
 }
 
 #obsMonitorHeader {
