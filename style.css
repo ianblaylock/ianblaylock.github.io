@@ -1,66 +1,82 @@
 :root {
     --main-text-color: #e6dcdc;
     --menu-selection-text-color: #efcc00;
+    --bold-color: #c8d2fa;
 }
 
 @font-face {
-    font-family: b612;
-    src: url(font/B612-Regular.ttf);
+    font-family:b612;src:url(font/B612-Regular.ttf)
 }
 
 @font-face {
-    font-family: b612-italic; 
-    src: url(font/B612-Italic.ttf);}
+    font-family:b612-italic;src:url(font/B612-Italic.ttf)
+}
 
-* {color: rgb(230,220,220); }
+* {
+    color: var(--main-text-color);
+}
 
 body {
-    background-color: rgb(20,20,20);
+    background-color: #141414;
     x-overflow: hidden;
-    font-family: b612;
+    font-family: b612
 }
 
 b {
-    color: rgb(200,210,250);
+    color: #c8d2fa
 }
 
 .clickspan {
-    color: var(--menu-selection-text-color);
+    color: var(--menu-selection-text-color)
 }
 
-#mainContainer {
+#header,#mainContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: column
 }
+
 #header {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0; padding: 0px 10px 0px 10px;
-    border-color: #ffffff;
-    border-width: 0px 0px 1px 0px;
-    border-style: solid;
+    margin: 0;
+    padding: 0 10px;
+    border-color: #fff;
+    border-width: 0 0 1px;
+    border-style: solid
 }
 
-@media screen and (max-width: 600px) {
-    #header {flex-direction: column;}
-    #tagLine p {text-align: center;}
+@media screen and (max-width:600px) {
+    #header {
+        flex-direction: column
+    }
+
+    #tagLine p {
+        text-align: center
+    }
 }
-#header h1 {margin: 0; padding: 0; text-align: center;}
+
+#header h1,#tagLine p {
+    margin: 0;
+    padding: 0;
+    text-align: center
+}
 
 #tagLine {
     display: flex;
     flex-direction: column;
-    margin: 0; padding: 0;
-    align-items: center;
+    margin: 0;
+    padding: 0;
+    align-items: center
 }
 
-#tagLine p {margin: 0; padding: 0; text-align: justify;}
+#tagLine p {
+    text-align: justify
+}
 
-#navMenu1 {
+#navMenu1,.imgFrame .imgCaption,.level1Menu {
     border-style: solid;
-    border-color: #ffffff;
-    border-width: 0px 0px 1px 0px;
+    border-color: #fff;
+    border-width: 0 0 1px
 }
 
 #navMenu1 ul {
@@ -68,33 +84,33 @@ b {
     display: flex;
     flex-direction: row;
     justify-content: flow-start;
-    margin: 0px 10px 0px 0px; 
-    padding: 0;
+    padding: 0; margin: 0;
 }
 
-#navMenu1 ul li {
-    padding: 0px 10px 0px 10px;
+#navMenu1 ul li,#softwareProjects ul li {
+    padding: 5px 10px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width:600px) {
     #navMenu1 ul {
-	margin: 0; padding: 0;
-	justify-content: space-around;
+        margin: 0;
+        padding: 0;
+        justify-content: space-around
     }
 }
 
 #level1Container {
     flex-grow: 1;
-    overflow: auto;
+    overflow: auto
 }
+
 .level1Menu {
     width: 150px;
-    border-style: solid;
-    border-color: #ffffff;
-    border-width: 1px;
+    border-width: 1px
 }
+
 .level1Section {
-    display: none;
+    display: none
 }
 
 #softwareProjects ul {
@@ -103,93 +119,137 @@ b {
     flex-flow: row wrap;
     justify-content: wrap-start;
     align-items: stretch;
-    padding: 0; margin: 0;
+    padding: 0;
+    margin: 0 10px 10px 0;
     border-style: solid;
-    border-color: #ffffff;
-    border-width: 0px 0px 1px 0px;
+    border-color: #fff;
+    border-width: 0 0 1px
+
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width:600px) {
     #softwareProjects ul {
-	justify-content: space-around;
+        justify-content: space-around
     }
 }
-#softwareProjects ul li {
-    padding: 0px 10px 0px 10px;
+
+li a:hover,li:hover {
+    color: #ec5800
 }
 
-li:hover {color: rgb(236,88,0);}
-li a:hover {color: rgb(236,88,0);}
 .softwareSection {
-    width: 100%;    
+    width: 100%;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column wrap
 }
 
-.level1Section p {
+/*.level1Section p {*/
+p {
     align: justify;
     text-align: justify;
-    margin-left: 1em; margin-right: 1em;
+    margin-left: 1em;
+    margin-right: 1em
+}
+
+.imgFrame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center
+}
+
+@media screen and (min-width:600px) {
+    .imgFrame {
+        width: 66%
+    }
 }
 
 .imgFrame {
     float: right;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    padding: 0; margin: auto;
-}
-
-@media screen and (min-width: 600px) {  .imgFrame { width: 66%; }}
-
-.imgFrame {
-    float: right;    
     max-width: 500px;
     margin: 10px;
-    padding: 10px;
+    padding: 10px
 }
 
+h3 {
+    margin-bottom: 0
+}
 
-h3 { margin-bottom: 0;}
+#myFace {
+    float: right;
+    height: auto;
+    margin-left: 10px;
+}
 
-#myFace { float: right; height: auto; margin-left: 10px; }
-#myFace img { border-radius: 10px; width: 250px;  }
+#myFace img {
+    border-radius: 10px;
+    width: 250px
+}
 
-
-.imgFrame img {  
-    padding-left: 1em;  
-    margin-left: auto; margin-right: auto;
-    max-width: 100%;   
+.imgFrame img {
+    padding-left: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
     max-height: 100%;
     flex: 1;
-    height: auto; width: auto;
+    height: auto;
+    width: auto
 }
 
-.imgFrame .imgCaption {
+.imgCaption {
     align: center;
     text-align: center;
-    margin-left: auto; margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
     font-style: italic;
     border-style: dashed;
-    border-color: #ffffff;    
-    border-width: 0px 0px 1px 0px;
-    font-size: 0.7em;
+    font-size: .7em
 }
 
 #obsMonitorHeader {
     width: 100%;
-    x-overflow: hidden;   
+    x-overflow: hidden
 }
-
 
 #obsMonitor ul li {
     list-style-type: circle;
-    display: inline;
+    display: inline
 }
 
 .paramFilterCode {
     font-family: b612-italic;
-    color: rgb(190,250,242);    
+    color: #befaf2
+}
+
+#florenceContainer {
+    float: right;
+}
+
+.videoContainer {    
+    flex-direction: column;
+    display: flex;
+    align-items: flex-end;
+    margin: 0; padding: 0;
+    overflow: auto;
+    width: 30em; overflow: hidden;
+}
+
+.videoContainer .imgCaption {
+    border-style: dashed;
+    border-color: var(--main-text-color);
+    border-width: 1px 0px 0px 0px;
+    
+    text-align: center;
+    padding-right: 1em;
+}
+
+.videoContainer video {
+    width: 30em; height: 20em;
+    margin: 0 0 2px 0;
+}
+
+#zoomMenu {
+    width: 200px;
 }

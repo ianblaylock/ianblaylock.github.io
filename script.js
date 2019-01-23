@@ -1,3 +1,5 @@
+//set up the menu functionality 
+
 var lvl1Dict = {"aboutMeMenuItem": "aboutMe",
 		"softwareProjectsMenuItem": "softwareProjects",
 		"skillsMenuItem": "skillsList"};
