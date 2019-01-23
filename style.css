@@ -2,6 +2,7 @@
     --main-text-color: #e6dcdc;
     --menu-selection-text-color: #efcc00;
     --bold-color: #c8d2fa;
+    --background-color: #141414;
 }
 
 @font-face {
@@ -13,24 +14,28 @@
 }
 
 * {
-    color: var(--main-text-color);
+    color: var(--main-text-color)
 }
 
 body {
-    background-color: #141414;
+    background-color: var(--background-color);
     x-overflow: hidden;
     font-family: b612
 }
 
 b {
-    color: #c8d2fa
+    color: var(--bold-color)
 }
 
 .clickspan {
     color: var(--menu-selection-text-color)
 }
 
-#header,#mainContainer {
+#header {
+    display: flex
+}
+
+#mainContainer {
     display: flex;
     flex-direction: column
 }
@@ -61,6 +66,10 @@ b {
     text-align: center
 }
 
+#tagLine p {
+    text-align: justify
+}
+
 #tagLine {
     display: flex;
     flex-direction: column;
@@ -69,14 +78,15 @@ b {
     align-items: center
 }
 
-#tagLine p {
-    text-align: justify
-}
-
 #navMenu1,.imgFrame .imgCaption,.level1Menu {
     border-style: solid;
     border-color: #fff;
     border-width: 0 0 1px
+}
+
+.level1Menu {
+    width: 150px;
+    border-width: 1px
 }
 
 #navMenu1 ul {
@@ -84,11 +94,12 @@ b {
     display: flex;
     flex-direction: row;
     justify-content: flow-start;
-    padding: 0; margin: 0;
+    padding: 0;
+    margin: 0
 }
 
 #navMenu1 ul li,#softwareProjects ul li {
-    padding: 5px 10px;
+    padding: 5px 10px
 }
 
 @media screen and (max-width:600px) {
@@ -102,11 +113,6 @@ b {
 #level1Container {
     flex-grow: 1;
     overflow: auto
-}
-
-.level1Menu {
-    width: 150px;
-    border-width: 1px
 }
 
 .level1Section {
@@ -124,7 +130,6 @@ b {
     border-style: solid;
     border-color: #fff;
     border-width: 0 0 1px
-
 }
 
 @media screen and (max-width:600px) {
@@ -143,11 +148,13 @@ li a:hover,li:hover {
     flex-flow: column wrap
 }
 
-/*.level1Section p {*/
+h3,p {
+    margin-left: 1em
+}
+
 p {
     align: justify;
     text-align: justify;
-    margin-left: 1em;
     margin-right: 1em
 }
 
@@ -166,6 +173,7 @@ p {
 
 .imgFrame {
     float: right;
+    clear: left;
     max-width: 500px;
     margin: 10px;
     padding: 10px
@@ -178,18 +186,22 @@ h3 {
 #myFace {
     float: right;
     height: auto;
-    margin-left: 10px;
+    margin-left: 10px
 }
 
 #myFace img {
     border-radius: 10px;
-    width: 250px
+    width: 250px;
+}
+
+.imgCaption,.imgFrame img {
+    margin-left: auto;
+    margin-right: auto
 }
 
 .imgFrame img {
     padding-left: 1em;
-    margin-left: auto;
-    margin-right: auto;
+    padding-right: 1em;
     max-width: 100%;
     max-height: 100%;
     flex: 1;
@@ -200,8 +212,6 @@ h3 {
 .imgCaption {
     align: center;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
     width: 100%;
     font-style: italic;
     border-style: dashed;
@@ -222,51 +232,40 @@ h3 {
     font-family: b612-italic;
     color: #befaf2
 }
-/*
-#florenceContainer {
-    float: right;
-}
-*/
-.videoContainer {    
+
+.videoContainer {
     float: right;
     flex-direction: column;
     display: flex;
     align-items: flex-end;
-    margin: 0; padding: 0;
-    overflow: auto;
-    width: 30em; overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 30em;
+    overflow: hidden
 }
-/*
-.videoContainer .imgCaption {
-    border-style: dashed;
-    border-color: var(--main-text-color);
-    border-width: 1px 0px 0px 0px;    
-    text-align: center;
-    padding-right: 1em;
-}
-*/
+
 .videoContainer video {
-    width: 30em; height: 20em;
-    margin: 0 0 2px 0;
-    display: none;
+    width: 30em;
+    height: 20em;
+    margin: 0 0 2px;
+    display: none
 }
 
 .videoContainer .buttonContainer {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-end
 }
 
 .videoButton {
-    margin: 0px 0px 0px 10px;
-    border-color: #ffffff;
+    margin: 0 0 0 10px;
+    border-color: #fff;
     border-width: 1px;
     border-style: solid;
-    background-color: #444444;
-    cursor: pointer;
+    background-color: #444;
+    cursor: pointer
 }
 
 #zoomMenu {
-    width: 200px;
+    width: 200px
 }
-

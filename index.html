@@ -9,8 +9,9 @@
       <div id="header">
 	<h1>Ian Blaylock</h1>
 	<div id="tagLine">
-	  <p>Software Developer/Meteorologist</p>
-	  <p>Peachtree City, GA</p>
+	  <p>Software Developer</p>
+	  <p>AV Artist</p>
+	  <p>Meteorologist</p>
 	</div>
       </div>
       <div id="navMenu1">
@@ -35,7 +36,7 @@
 	<div id="softwareProjects" class="level1Section">
 	  <ul>
 	    <li id="obsMonitorMenuItem">ObsMonitor</li>
-	    <li id="gageScatterplotMenuItem">GageScatterlpot</li>
+	    <li id="gageScatterplotMenuItem">GageScatterplot</li>
 	    <li id="hydroDataViewerMenuItem">HydroDataViewer</li>
 	    <li id="quickHydroBriefMenuItem">QuickHydroBrief</li>	    
 	  </ul>
@@ -43,7 +44,7 @@
 	    <div id="obsMonitor" class="softwareSection">
 	      <div id="obsMonitorHeader">
 		<h3>About ObsMonitor</h3>
-		<p><b>ObsMonitor</b> is an application I designed and implemented for the display of decoded weather observations. It is operationally used by 45+ National Weather Service offices nationwide. </p>		
+		<p><b>ObsMonitor</b> is an application I designed and implemented for the display of decoded weather observations. It is operationally used by 45+ National Weather Service offices nationwide. An early version of it received the a local NWS Isaac Cline award in 2015.</p>		
 		<div id="imgVaExample" class="imgFrame">
 		  <img src="img/vaExample.png" alt="ObsMonitor in action" >
 		  <div class="imgCaption">ObsMonitor highlighting freezing conditions across<br> Virginia with obs sorted by temperature and different row colors.</div>
@@ -92,6 +93,20 @@
 	      </div>
 	    </div>
 	    <div id="gageScatterplot" class="softwareSection">
+	      <h3>GageScatterPlot</h3>
+	      <div id="scatterplotExample" class="imgFrame">
+		<img src="img/scatterplotImg.png" alt="GageScatterplot in action!" />
+		<div class="imgCaption">GageScatterplot showing differences between rain gages and gridded rainfall estimates. Gages outside the shaded area are those that differ by more than 10% from the gridded estimates, indicating further QC work may be necessary.</div>
+	      </div>
+	      <p>GageScatterplot is a Java program designed to help visualize differences between gridded precipitation estimates and 24 hour rain gage measurements. It is the recipient of regional and local NWS Isaac Cline awards in data acquisition management, and is used by a majority of River Forecast Centers around the US.</p>
+
+	      <p>It was initially inspired by an earlier program written at West Gulf River Forecast Center which, while similar in functionality, was significantly slower and less flexible. It allows observations to be grouped by several different criteria -- state, county, nearest radar, gage network, and lat/lon bounds. Max/min bounds may also be set on both the gage and grid values. This aids the meteorologist on shift with zeroing in on regions that need extra quality control!</p>
+
+	      <p>Each time the program is refreshed, it reads all of the latest reported rainfall observations and most up to date gridded estimates, performing a linear regression on the data to give an idea of how well the operational estimates match ground truth. On a typical day, it is used to make sure that r<sup>2</sup> &gt;= 0.9.</p>
+
+	      <p>By mousing over any of the display points, additional metadata about each location can be displayed. Namely, the short ID, full name, state, lat/lon coordinates, rain gage type, distance to the nearest radar, and time of the observation. This can further narrow down the source of the quality control issue!</p>
+	      
+	      <p>If locations report rainfall several days in a row, multi-day accumulations can be plotted as well. In fact, this feature was used to create accurate multi-day rainfall maps for the tremendously wet hurricanes Harvey and Florence!</p>
 	    </div>
 	    <div id="hydroDataViewer" class="softwareSection">
 	      <h3>HydroDataViewer</h3>
@@ -142,12 +157,56 @@
 	      <p>As seen in the top image, HydroDataViewer is also capable of exporting hour-by-hour time series animations of rainfall totals in both GIF and AVI formats. These were distributed by NWS offices on social media in the wake of the event.</p>
 	    </div>
 	    <div id="quickHydroBrief" class="softwareSection">
-	    </div>
+	      <h3>QuickHydroBrief</h3>
+	      <div id="quickHydroBriefExample" class="imgFrame"> 
+		<img src="img/quickHydroBrief.png" alt="QuickHydroBrief displaying tailwater stage data for Demopolis Lock in Alabama" />
+		<div class="imgCaption">
+		  QuickHydroBrief displaying tailwater stage data for Demopolis Lock in Alabama</div>
+	      </div>
+	      <p>QuickHydroBrief is a Java based hydrograph display utility used by 25+ Weather Forecast Offices and River Forecast Centers across the National Weather Service created in mid-2018. It offers several advantages -- easy keyboard navigation between different river gage locations and basin groups, automatic pop-ups and audio alerts whenever river stages cross defined thresholds, and easy mouse-based removal of bad data when necessary.</p>
+
+	      <p>Each configurable river basin is divided into its own tab, with an "All Basins" tab always existing that displays all of the configured locations sorted by flood category. Beside each location is an icon indicating the current flood stage and forecast flood stage to aid in situational awareness. Users may toggle between each tab using the &larr; &amp; &rarr; keys and between sites in the left menu with the &uarr; &amp; &darr; keys.</p>
+	      
+	      <p>Data is updated with minimal latency whenever a user selects an individual site, and is retrieved by interfacing with a local PostgreSQL database. This means that whenever you view any given hydrograph, you can be sure that it is up to date!</p>
+
+	      <div id="stageChangeExample" class="imgFrame">
+		<img src="img/stageChange.png" alt="The dialog that appears whenever a stage change is detected." />
+		<div class="imgCaption">
+		  The stage change dialog alerting the user that a river has gone from minor to moderate flood stage.
+		</div>
+	      </div>
+
+	      <p>QuickHydroBrief maintains a cache of the most recent reading for each location. This cache is updated on a minute-to-minute basis. Whenever a new value is detected that crosses a significant threshold, a pop-up is displayed and an alarm is heard. Users may toggle this feature on and off both globally and on a site by site basis. Also, QuickHydroBrief supported customized sounds for each user.</p>	      
 	    </div>
 	  </div>
 	</div>
 	<div id="skillsList" class="level1Section">
-	  Here's where I tell you about my skillzzzzz
+	  <div>
+	    <h3>Education</h3>
+	    <p><b>Bachelor of Science: Meteorology</b></p>
+	    <p>Western Kentucky University, 2012</p>
+	  </div>
+	  <div>
+	    <h3>Past Employers</h3>
+	    <div>
+	      <p><b>Southeast River Forecast Center</b></p>
+	      <p>Hydrometeorologist / Software Developer</p>
+	      <p>2015 - Present</p>
+	      <p>Peachtree City, Georgia</p>
+	    </div>
+	    <div>
+	      <p><b>NWS WFO Corpus Christi</b></p>
+	      <p>Meteorologist Intern</p>
+	      <p>2012 - 2015</p>
+	      <p>Corpus Christ, Texas</p>
+	    </div>	     
+	    <div>
+	      <p><b>NWS WFO Juneau</b></p>
+	      <p>SCEP (Student Intern)</p>
+	      <p>2010 - 2011</p>
+	      <p>Juneau, Alaska</p>
+	    </div>
+	  </div>
 	</div>
       </div>
     </div>
