@@ -24,7 +24,7 @@
 	<div id="aboutMe" class="level1Section">
 	  <h3>A bit about me...</h3>
 	  <div id="myFace">
-	    <img  src="img/myface.jpg" alt="A photo of me">
+	    <img src="img/myface.jpg" alt="A photo of me">
 	  </div> 
 	  <p>I'm a hydrometeorologist for the National Weather Service. My primary job is to quality control hourly rainfall data to help provide accurate river forecasts. And I do! That said, it's not always raining, which frees up time to create award-winning data visualization software.</p>
 
@@ -95,13 +95,19 @@
 	    </div>
 	    <div id="hydroDataViewer" class="softwareSection">
 	      <h3>HydroDataViewer</h3>
-	      <div id="florenceContainer" class="videoContainer">
-		<video id="florence" controls loop>
-		  <source src="vid/florenceAccumulation.mp4" type="video/mp4"></source>
+	      <div class="videoContainer">
+		
+		<video id="michaelVideo" controls loop>
+		  <source src="vid/michaelAccumulation.mp4" type="video/mp4"></source>
 		</video>
-		<div class="imgCaption">
-		  An animation of Hurricane Florence's rainfall totals created using HydroDataViewer
+		<video id="florenceVideo" controls loop>
+		  <source src="vid/florenceAccumulation.mp4" type="video/mp4"></source>
+		</video>		
+		<div id="buttonContainer" class="buttonContainer">
+		  <div id="michaelButton" class="videoButton">Michael</div>
+		  <div id="florenceButton" class="videoButton">Florence</div>
 		</div>
+
 	      </div>
 
 	      <p><b>HydroDataViewer</b> is a program designed for the visualization of gridded precipitation datasets and point hydrometeorological data, used by several River Forecast Centers across the US. All of the source code and configuration files are written in Clojure, with the configuration files taking advantange of Clojure's homoiconicity to act as an easily parseable JSON-esque data structure.</p>

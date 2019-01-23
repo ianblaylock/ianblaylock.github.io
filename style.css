@@ -222,12 +222,13 @@ h3 {
     font-family: b612-italic;
     color: #befaf2
 }
-
+/*
 #florenceContainer {
     float: right;
 }
-
+*/
 .videoContainer {    
+    float: right;
     flex-direction: column;
     display: flex;
     align-items: flex-end;
@@ -235,21 +236,37 @@ h3 {
     overflow: auto;
     width: 30em; overflow: hidden;
 }
-
+/*
 .videoContainer .imgCaption {
     border-style: dashed;
     border-color: var(--main-text-color);
-    border-width: 1px 0px 0px 0px;
-    
+    border-width: 1px 0px 0px 0px;    
     text-align: center;
     padding-right: 1em;
 }
-
+*/
 .videoContainer video {
     width: 30em; height: 20em;
     margin: 0 0 2px 0;
+    display: none;
+}
+
+.videoContainer .buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.videoButton {
+    margin: 0px 0px 0px 10px;
+    border-color: #ffffff;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #444444;
+    cursor: pointer;
 }
 
 #zoomMenu {
     width: 200px;
 }
+
