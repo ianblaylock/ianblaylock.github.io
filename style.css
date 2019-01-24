@@ -13,13 +13,11 @@
     font-family:b612-italic;src:url(font/B612-Italic.ttf)
 }
 
-* {
-    color: var(--main-text-color)
-}
 
 body {
+    color: var(--main-text-color);
     background-color: var(--background-color);
-    x-overflow: hidden;
+    overflow: hidden;
     font-family: b612
 }
 
@@ -32,8 +30,25 @@ b {
 }
 
 #header {
-    display: flex
+    display: flex;
+    height: 6em;
 }
+
+#header .background {
+    z-index: -1;
+	position: absolute;
+	top: 0px; left: 0px; width: 100%; height: auto;
+	overflow: none;
+	display: block;
+	max-height: 6em;
+	-webkit-filter: blur(6px);
+	object-fit: cover;
+}
+
+#header h1, #header #tagLine {
+	z-index: 1;
+}
+
 
 #mainContainer {
     display: flex;
@@ -51,10 +66,14 @@ b {
 }
 
 @media screen and (max-width:600px) {
-    #header {
-        flex-direction: column
+    #header{
+        flex-direction: column;
+		height: 5em;
     }
 
+	#header .background {
+		max-height: 5em;
+	}
     #tagLine p {
         text-align: center
     }
@@ -112,7 +131,7 @@ b {
 
 #level1Container {
     flex-grow: 1;
-    overflow: auto
+    x-overflow: auto
 }
 
 .level1Section {
@@ -152,8 +171,7 @@ h3,p {
     margin-left: 1em
 }
 
-p {
-    align: justify;
+p {   
     text-align: justify;
     margin-right: 1em
 }
@@ -187,11 +205,13 @@ h3 {
     float: right;
     height: auto;
     margin-left: 10px
+   
 }
 
 #myFace img {
     border-radius: 10px;
     width: 250px;
+    /*visibility: hidden;*/
 }
 
 .imgCaption,.imgFrame img {
@@ -210,7 +230,7 @@ h3 {
 }
 
 .imgCaption {
-    align: center;
+    margin: auto;
     text-align: center;
     width: 100%;
     font-style: italic;
@@ -220,7 +240,7 @@ h3 {
 
 #obsMonitorHeader {
     width: 100%;
-    x-overflow: hidden
+    overflow: hidden
 }
 
 #obsMonitor ul li {
