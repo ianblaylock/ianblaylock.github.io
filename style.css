@@ -15,7 +15,7 @@
 }
 
 html, body{ min-height: 100%; margin: 0; padding: 0;}
-html { font-size: calc(0.8em + 0.7vw);}
+html { font-size: calc(0.8 * (0.8em + 0.7vw));}
 
 body {
     color: var(--main-text-color);
@@ -26,11 +26,15 @@ body {
 
 #header {
     position: relative;
-    top: 0; height: 3em; width: 100%;
+    top: 0; height: 4em; width: 100%;
     margin: 0; padding: 0;
     border-color: #fff;
     border-width: 0 0 1px;
     border-style: solid
+}
+
+.softwareProjectContainer {
+    padding: 0 1vw;
 }
 
 #header h1, #header #tagLine {z-index: 1; position: absolute;
@@ -41,19 +45,19 @@ body {
 	justify-content: flex-end;
 }
 #tagLine p {
-    margin-top: 0.5vh;
+    margin-top: 0.5vw;
     margin-bottom: 0px;
     text-align: right;
 }
 
-#header h1 {left: 2px; bottom: 2px;
+#header h1 {left: 1vw; bottom: 2px;
 	    font-size: 2em;}
-#header #tagLine {right: 2px; bottom: 2px;}
+#header #tagLine {right: 1vw; bottom: 2px;}
 
 #header .background {
     z-index: -1;
     position: absolute;
-    top: 0px; left: 0px; width: 100%; height: 8vh;
+    top: 0px; left: 0px; width: 100%; height: 4em;
     overflow: none;
     display: block;
     -webkit-filter: blur(6px);
@@ -61,8 +65,7 @@ body {
 }
 
 .menuDiv {
-    padding: 0; margin: 0;
-    height: 1.5em;
+    padding: 0.5em 1vw; margin: auto 0;
     border-style: solid;
     border-color: #fff;
     border-width: 0 0 1px
@@ -84,7 +87,7 @@ body {
 }
 
 #myFace {
-	width: 20vw; height: auto;
+	width: 25vw; height: auto;
 	float: left; margin: 10px;
 	border-radius: 10px;
 	margin-left: 1vw;
