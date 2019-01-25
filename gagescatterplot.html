@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="gagescatterplotstyle.css">
+  </head>
+  <body>
+    <h3>GageScatterPlot</h3>
+    <div id="scatterplotExample" class="imgFrame">
+      <img src="img/scatterplotImg.png" alt="GageScatterplot in action!" />
+      <div class="imgCaption">GageScatterplot showing differences between rain gages and gridded rainfall estimates. Gages outside the shaded area are those that differ by more than 10% from the gridded estimates, indicating further QC work may be necessary.</div>
+    </div>
+    <p>GageScatterplot is a Java program designed to help visualize differences between gridded precipitation estimates and 24 hour rain gage measurements. It is the recipient of regional and local NWS Isaac Cline awards in data acquisition management, and is used by a majority of River Forecast Centers around the US.</p>
+
+    <p>It was initially inspired by an earlier program written at West Gulf River Forecast Center which, while similar in functionality, was significantly slower and less flexible. It allows observations to be grouped by several different criteria -- state, county, nearest radar, gage network, and lat/lon bounds. Max/min bounds may also be set on both the gage and grid values. This aids the meteorologist on shift with zeroing in on regions that need extra quality control!</p>
+
+    <p>Each time the program is refreshed, it reads all of the latest reported rainfall observations and most up to date gridded estimates, performing a linear regression on the data to give an idea of how well the operational estimates match ground truth. On a typical day, it is used to make sure that r<sup>2</sup> &gt;= 0.9.</p>
+
+    <p>By mousing over any of the display points, additional metadata about each location can be displayed. Namely, the short ID, full name, state, lat/lon coordinates, rain gage type, distance to the nearest radar, and time of the observation. This can further narrow down the source of the quality control issue!</p>
+    
+    <p>If locations report rainfall several days in a row, multi-day accumulations can be plotted as well. In fact, this feature was used to create accurate multi-day rainfall maps for the tremendously wet hurricanes Harvey and Florence!</p>
+  </body>
+</html>

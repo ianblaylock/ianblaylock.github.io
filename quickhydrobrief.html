@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="quickhydrobriefstyle.css">
+  </head>
+  <body>
+    <h3>QuickHydroBrief</h3>
+    <div id="quickHydroBriefExample" class="imgFrame"> 
+      <img src="img/quickHydroBrief.png" alt="QuickHydroBrief displaying tailwater stage data for Demopolis Lock in Alabama" />
+      <div class="imgCaption">
+	QuickHydroBrief displaying tailwater stage data for Demopolis Lock in Alabama</div>
+    </div>
+    <p>QuickHydroBrief is a Java based hydrograph display utility used by 25+ Weather Forecast Offices and River Forecast Centers across the National Weather Service created in mid-2018. It offers several advantages -- easy keyboard navigation between different river gage locations and basin groups, automatic pop-ups and audio alerts whenever river stages cross defined thresholds, and easy mouse-based removal of bad data when necessary.</p>
+
+    <p>Each configurable river basin is divided into its own tab, with an "All Basins" tab always existing that displays all of the configured locations sorted by flood category. Beside each location is an icon indicating the current flood stage and forecast flood stage to aid in situational awareness. Users may toggle between each tab using the &larr; &amp; &rarr; keys and between sites in the left menu with the &uarr; &amp; &darr; keys.</p>
+    
+    <p>Data is updated with minimal latency whenever a user selects an individual site, and is retrieved by interfacing with a local PostgreSQL database. This means that whenever you view any given hydrograph, you can be sure that it is up to date!</p>
+
+    <div id="stageChangeExample" class="imgFrame">
+      <img src="img/stageChange.png" alt="The dialog that appears whenever a stage change is detected." />
+      <div class="imgCaption">
+	The stage change dialog alerting the user that a river has gone from minor to moderate flood stage.
+      </div>
+    </div>
+    
+    <p>QuickHydroBrief maintains a cache of the most recent reading for each location. This cache is updated on a minute-to-minute basis. Whenever a new value is detected that crosses a significant threshold, a pop-up is displayed and an alarm is heard. Users may toggle this feature on and off both globally and on a site by site basis. Also, QuickHydroBrief supported customized sounds for each user.</p>	      
+</body></html>

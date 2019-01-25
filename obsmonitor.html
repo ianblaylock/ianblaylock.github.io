@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="obsmonitorstyle.css">
+  </head>
+  <body>
+    <div id="obsMonitorHeader">
+      <h3>About ObsMonitor</h3>
+      <p><b>ObsMonitor</b> is an application I designed and implemented for the display of decoded weather observations. It is operationally used by 45+ National Weather Service offices nationwide. An early version of it received the a local NWS Isaac Cline award in 2015.</p>		
+      <div id="imgVaExample" class="imgFrame">
+	<img src="img/vaExample.png" alt="ObsMonitor in action" >
+	<div class="imgCaption">ObsMonitor highlighting freezing conditions across<br> Virginia with obs sorted by temperature and different row colors.</div>
+      </div>
+
+      <p>It consists of a tabbed interface, each tab of which contains an auto-updating table of decoded weather displays from a variety of sources. </p>
+
+      <p>Users may either view the reverse-chronological history of weather observations at a single location or the latest observations for a configured list of sites. Additionally, you can set the "current" time to an arbitrary time in the past to see the latest observations <i>as of that time</i>.</p>
+
+      <h3>Data Sources</h3>
+
+      <p>The data itself is decoded from a variety of formats, namely METAR, WMO FM-13, and WMO FM-18. These represent land-based surface observations, moored buoys and ships, and drifting buoys, respectively, and are read from a local PostgreSQL database. These observations are decoded using regex-based parsing algorithms and assigned metadata from a configurable XML file.</p>
+      
+      <p>From here, the decoded observations are compared against geographic and parametric filters for inclusion in the table.</p>
+
+      <h3>Location and Highlighting Configuration</h3>
+
+      <p>Both using a domain-specific query language -- for example <span class="paramFilterCode">":t le 32 and :visnum le 0.25 and :spd gt 35 or :gust gt 35"</span> specifies that if visibility is below a 1/4 mile, temperatures are below freezing, and winds are above 35 knots, flag the site for inclusion.</p>
+
+      <p>An alternate type of selection criteria uses the encoded present weather types. For example: <span class="paramFilterCode">"DU|SA|DS"</span> specifies that all obs containing references to blowing dust, dust storms, or blowing sand should be flagged.
+	
+      <p>Typically, geographic filters are used for specifying table locations while parametric filters are used for row highlighting criteria. However both location settings and highlighting settings are able to use both as the end-user sees fit.</p>
+
+      <div id="highlightingExample" class="imgFrame">
+	<img src="img/highlightingEditor.png" alt="The highlighting editor, demostrating both types of parametric filter types.">
+	<div class="imgCaption">The highlighting editor, demostrating both types of parametric filter types.</div>
+      </div>
+
+      <h3>Column Configuration</h3>
+      <p>Any meteorological parameter that is regularl reported in encoded formats may be displayed in its own column. The user may choose from a number of settings, such as the name displayed in the column header, horizontal alignment, numeric precision, column width, and the colorscale used.</p>
+
+      <p>These column configurations may be saved and re-loaded in a different table configuration to make the configuration of subsequent tables more convenient.</p>
+      
+      <h3>Colorscale Configuration</h3>
+      <p> There are three different types of colorscales supported in ObsMonitor: <i>range</i>, <i>gradient</i>, and <i>discrete</i>. Range and gradient colorscales are exclusively applied to numeric parameters such as temperature, relative humidity, and hourly rainfall. Discrete colorscales shade based on string equivalence and are applied to non-numeric parameters like geographic metadata.</p>
+
+      <div id="colorScaleExample" class="imgFrame">
+	<img src="img/differentColorscales.png" alt="Multiple types of colorscales, as defined in the columns editor." />
+	<div class="imgCaption">The three types of colorscales previewed as part of the columns editor.</div>
+      </div>
+
+      <p>Range colorscales are defined as a stepwise numeric function that returns a defined color. Gradient colorscales define distinct numeric bounds to which a value is compared and a color is linearly interpolated. These two types are interconvertable. </p>
+
+      <h3>Multivariate Sorting</h3>
+      <p>Complex multivariate sorting is supported, with users able to sort the columns by any number of meteorological parameters. For example, a couple could sort the locations alphabetically by state with a secondary sorting criteria by state if they want. Sorting rules invariable follow a "nulls last" policy, where defined values, regardless of magninude, always appear first.</p>				
+    </div>
+  </body>
+</html>

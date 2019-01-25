@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="hydrodataviewerstyle.css">
+  </head>
+  <body>
+    <h3>HydroDataViewer</h3>
+    <div class="videoContainer">
+      
+      <video id="michaelVideo" controls loop>
+	<source src="vid/michaelAccumulation.mp4" type="video/mp4"></source>
+      </video>
+      <video id="florenceVideo" controls loop>
+	<source src="vid/florenceAccumulation.mp4" type="video/mp4"></source>
+      </video>		
+      <div id="buttonContainer" class="buttonContainer">
+	<div id="michaelButton" class="videoButton">Michael</div>
+	<div id="florenceButton" class="videoButton">Florence</div>
+      </div>
+
+    </div>
+
+    <p><b>HydroDataViewer</b> is a program designed for the visualization of gridded precipitation datasets and point hydrometeorological data, used by several River Forecast Centers across the US. All of the source code and configuration files are written in Clojure, with the configuration files taking advantange of Clojure's homoiconicity to act as an easily parseable JSON-esque data structure.</p>
+
+    <p>It provides the user with flexible, straightforward configuration of ESRI shapefile-based map backgrounds, and customizable zoom/panning presets so the user can quickly navigate to pre-configured locations on the map. Videos showcasing spatial precipitation totals over time can be exported in GIF or AVI format, and it offers the same sorts of colorscale customization as <span class="clickspan" onclick="selectMenuItemInDict(softwareDict,'obsMonitorMenuItem')">ObsMonitor</span>, only applicable to a spatially gridded dataset.</p>
+
+    <h3>Configurable Display Presets</h3>
+
+    <p>HydroDataViewer allows users to configure preset "data bundles" to better facilitate analysis of datasets. For example, at my local office we have one that displays mapped precipitation estimates ending at 12Z that morning, another that opens up a tiled display showing that same data broken up into 6 hour blocks, and another menu item that simply plots the current flood category of various river gages.</p>
+
+    <h3>Flexible Map Backgrounds</h3>
+
+    <p>HydroDataViewer allows the user to add their own shapefiles, as long as the shapefile data is stored using lat/lon coordinates. These are loaded using native processing code, projected into a custom polar stereographic projection, and displayed according configurable settings.</p>
+
+    <p>Polygon-, polyline-, and point-based shapefiles are supported, with counties, rivers, and cities serving as an example of each. Users may select one field in the metadat to serve as the map label and as many fields as desired to appear on mouseover. Font customization is also provided in the form of font name, size, and color. The color and drawing order of the shapefiles may also be customized. Default settings can be set at both the site and user level, empowering individual users to define their own default map background settings if desired.</p>
+
+    <h3>Map Navigation</h3>
+
+    <div id="zoomMenu" class="imgFrame">
+      <img src="img/zoomMenu.png" alt="An example of a configured zoom menu." />
+      <div class="imgCaption">
+	An example of a configured zoom menu.
+      </div>
+    </div>
+
+    <p>Users may navigate to arbitrary points on the map using a number of different means - lat/lon coordinates, site IDs with locations defined in a local database, and querying the metadata of loaded shapefiles.</p>
+
+    <p>Additionally, there is a configurable tear-off menu where users can select from a list of pre-defined map extents. Like most other aspects of the program, this is customizable at both the site and office level!</p>
+
+    <h3>Exporting rainfall animations</h3>
+
+    <p>As seen in the top image, HydroDataViewer is also capable of exporting hour-by-hour time series animations of rainfall totals in both GIF and AVI formats. These were distributed by NWS offices on social media in the wake of the event.</p>
+  </body>
+  <script src="script.js"></script>
+</html>

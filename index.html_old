@@ -1,47 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ian Blaylock</title>    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body> 
-    <div id="header">
-      <img class="background" src="img/obsMonitorHeader.png">
-      <h1>Ian Blaylock</h1>
-      <div id="tagLine">
-	<p>Software Developer</p>
-	<p>Meteorologist</p>
-      </div>
-    </div>
-    <div id="mainMenu">
-      <ul>
-	<li id="aboutMeMenuItem"><a href="bio.html" target="mainIFrame">About Me</a></li>
-	<li id="softwareProjectsMenuItem"><a href="projects.html" target="mainIFrame">Projects</a></li>
-	<li id="skillsMenuItem"><a href="skills.html" target="mainIFrame">Skills & Education</a></li>
-      </ul>
-    </div>
-    <div id="mainIFrameContainer">
-      <iframe src="bio.html" alt="Biography" id="mainIFrame" name="mainIFrame" scrolling="no"/>
-    </div> 
-  </body>
-</html>
-      <!--
-      <div id="mainMenu">
-
-      </div>
-      <div id="mainIFrameContainer">
-	<iframe src="bio.html" alt="Biography" id="mainIFrame"/>
-      </div>
-      ->
-    </div>
-    <!--
     <div id="mainContainer">
       <div id="header">
 	<img class="background" src="img/obsMonitorHeader.png">
 	<h1>Ian Blaylock</h1>
 	<div id="tagLine">
 	  <p>Software Developer</p>
+	  <!--<p>AV Artist</p>-->
 	  <p>Meteorologist</p>
 	</div>
       </div>
@@ -243,7 +213,4 @@
     </div>
     <script src="script.js"></script>
   </body>
-
 </html>
-
-    -->
