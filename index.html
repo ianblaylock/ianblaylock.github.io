@@ -112,6 +112,7 @@
       </div>
       <div id="hydroDataViewer" class="softwareProjectContainer">
 	<h3>HydroDataViewer</h3>
+	
 	<div class="videoContainer">	  
 	  <video id="florenceVideo" controls loop>
 	    <source src="vid/florenceAccumulation.mp4" type="video/mp4"></source>
@@ -171,8 +172,6 @@
 	<p>Each configurable river basin is divided into its own tab, with an "All Basins" tab always existing that displays all of the configured locations sorted by flood category. Beside each location is an icon indicating the current flood stage and forecast flood stage to aid in situational awareness. Users may toggle between each tab using the &larr; &amp; &rarr; keys and between sites in the left menu with the &uarr; &amp; &darr; keys.</p>
 	
 	<p>Data is updated with minimal latency whenever a user selects an individual site, and is retrieved by interfacing with a local PostgreSQL database. This means that whenever you view any given hydrograph, you can be sure that it is up to date!</p>
-
-
 	
 	<p>QuickHydroBrief maintains a cache of the most recent reading for each location. This cache is updated on a minute-to-minute basis. Whenever a new value is detected that crosses a significant threshold, a pop-up is displayed and an alarm is heard. Users may toggle this feature on and off both globally and on a site by site basis. Also, QuickHydroBrief supported customized sounds for each user.</p>
 	<div id="stageChangeExample" class="imgFrame">
@@ -184,8 +183,108 @@
       </div>
     </div>
     <div id="skills" class="contentContainer">
-      check one two
+      <!-- here i need to do two parts: an svg-based "skills chart" and an education section -->
+      <div id="skillsSection">
+	<h3>Dev Skills</h3>
+	
+      </div>
+      <div id="resumeSection">
+	<div id="workExperience">
+	  <h3>Work Experience</h3>
+	  <div class="job">
+	    <div class="timespan">July 2015 - Present</div>
+	    <div class="office">Southeast River Forecast Center</div>
+	    <div class="organization">National Weather Service</div>
+	    <div class="jobtitle">Hydrometeorological Analysis And Support Forecaster</div>
+	    <div class="location">Peachtree City, Georgia</div>
+	    
+	    <div class="description">Worked</div>
+	  </div>
+	  <div class="job">
+	    <div class="timespan">June 2012 - July 2015</div>
+	    <div class="office">Weather Forecast Office</div>
+	    <div class="organization">National Weather Service</div>
+	    <div class="jobtitle">Meteorologist Intern</div>
+	    <div class="location">Corpus Christi, Texas</div>
+	    <div class="description">Worked earlier</div>
+	  </div>
+	  <div class="job">
+	    <div class="timespan">June 2010 - August 2011</div>
+	    <div class="office">Weather Forecast Office</div>
+	    <div class="organization">National Weather Service</div>
+	    <div class="jobtitle">SCEP - Student Career Employment Program</div>
+	    <div class="location">Juneau, Alaska</div>
+
+	    <div class="description">Worked even earlier</div>	      
+	  </div>
+	  <div class="job">
+	    <div class="timespan">Jan 2009 - May 2012</div>
+	    <div class="office">Climate Research Lab</div>
+	    <div class="organization">Western Kentucky University</div>
+	    <div class="jobtitle">Research Assistant</div>
+	    <div class="location">Bowling Green, Kentucky</div>
+
+	    <div class="description">didn't do shit</div>
+	  </div>
+	</div>
+	<div id="education">
+	  <h3>Education</h3>
+	  <div class="timespan">Aug 2008 - May 2012</div>
+	  <div class="degree">Bachelor's of Science: Meteorology</div>
+	  <div class="minor">Minor in Mathematics</div>
+	  <div class="almamater">Western Kentucky University</div>
+	  <div class="location">Bowling Green, Kentucky</div>
+	  
+	</div>	
+      </div>
+      
+      <!--
+      <div id="resumeSection">
+	<div id="workExperience">
+	  <div class="job">
+	    <div class="office">Southeast River Forecast Center</div>
+	    <div class="organization">National Weather Service</div>
+	    <div class="jobtitle">Hydrometeorological Analysis And Support Forecaster</div>
+	    <div class="location">Peachtree City, Georgia</div>
+	    <div class="timespan">July 2015 - Present</div>
+	    <div class="description">Worked</div>	    
+	  </div>
+	  <div class="job">
+	    <div class="office">Weather Forecast Office - Corpus Christi</div>
+	    <div class="organization">National Weather Service</div>
+	    <div class="jobtitle">Meteorologist Intern</div>
+	    <div class="location">Corpus Christi, Texas</div>
+	    <div class="timespan">June 2012 - July 2015</div>
+	    <div class="description">Worked earlier</div>
+	  </div>
+	  <div class="job">
+	    <div class="office">Weather Forecast Office - Juneau</div>
+	    <div class="organization">National Weather Service</div>
+	    <div class="jobtitle">SCEP - Student Career Employment Program</div>
+	    <div class="location">Juneau, Alaska</div>
+	    <div class="timespan">June 2010 - August 2011</div>
+	    <div class="description">Worked even earlier</div>	      
+	  </div>
+	  <div class="job">
+	    <div class="office">Climate Research Lab</div>
+	    <div class="organization">Western Kentucky University</div>
+	    <div class="jobtitle">Research Assistant</div>
+	    <div class="location">Bowling Green, Kentucky</div>
+	    <div class="timespan">Jan 2009 - May 2012</div>
+	    <div class="description">didn't do shit</div>
+	  </div>
+	</div>
+	<div id="education">
+	  <div class="degree">Bachelor's of Science: Meteorology</div>
+	  <div class="minor">Minor in Mathematics</div>
+	  <div class="almamater">Western Kentucky University</div>
+	  <div class="location">Bowling Green, Kentucky</div>
+	  <div class="timespan">Aug 2008 - May 2012</div>	  
+	</div>	
+      </div>
+
     </div>
+    -->
   </body>
   <script src="script.js"></script>
 </html>
