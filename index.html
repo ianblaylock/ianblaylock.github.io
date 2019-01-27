@@ -41,13 +41,14 @@
     </div>
     <div id="projects" class="contentContainer">
       <div id="obsMonitor" class="softwareProjectContainer">
-	<h3>About ObsMonitor</h3>
-	<p><b>ObsMonitor</b> is an application I designed and implemented for the display of decoded weather observations. It is operationally used by 45+ National Weather Service offices nationwide. An early version of it received the a local NWS Isaac Cline award in 2015.</p>		
-	<div id="imgVaExample" class="imgFrame">
-	  <img src="img/vaExample.png" alt="ObsMonitor in action" >
-	  <div class="imgCaption">ObsMonitor highlighting freezing conditions across<br> Virginia with obs sorted by temperature and different row colors.</div>
+	<div class="imgTextGroup">
+	  <h3>About ObsMonitor</h3>	
+	  <p><b>ObsMonitor</b> is an application I designed and implemented for the display of decoded weather observations. It is operationally used by 45+ National Weather Service offices nationwide. An early version of it received the a local NWS Isaac Cline award in 2015.</p>		
+	  <div id="imgVaExample" class="imgFrame">
+	    <img src="img/vaExample.png" alt="ObsMonitor in action" >
+	    <div class="imgCaption">ObsMonitor highlighting freezing conditions across<br> Virginia with obs sorted by temperature and different row colors.</div>
+	  </div>
 	</div>
-
 	<p>It consists of a tabbed interface, each tab of which contains an auto-updating table of decoded weather displays from a variety of sources. </p>
 
 	<p>Users may either view the reverse-chronological history of weather observations at a single location or the latest observations for a configured list of sites. Additionally, you can set the "current" time to an arbitrary time in the past to see the latest observations <i>as of that time</i>.</p>
@@ -62,44 +63,45 @@
 
 	<p>Both using a domain-specific query language -- for example <span class="paramFilterCode">":t le 32 and :visnum le 0.25 and :spd gt 35 or :gust gt 35"</span> specifies that if visibility is below a 1/4 mile, temperatures are below freezing, and winds are above 35 knots, flag the site for inclusion.</p>
 
-	<p>An alternate type of selection criteria uses the encoded present weather types. For example: <span class="paramFilterCode">"DU|SA|DS"</span> specifies that all obs containing references to blowing dust, dust storms, or blowing sand should be flagged.
+	<p>An alternate type of selection criteria uses the encoded present weather types. For example: <span class="paramFilterCode">"DU|SA|DS"</span> specifies that all obs containing references to blowing dust, dust storms, or blowing sand should be flagged.</p>
+	<div class="imgTextGroup">
+	  <p>Typically, geographic filters are used for specifying table locations while parametric filters are used for row highlighting criteria. However both location settings and highlighting settings are able to use both as the end-user sees fit.</p>
 	  
-	<p>Typically, geographic filters are used for specifying table locations while parametric filters are used for row highlighting criteria. However both location settings and highlighting settings are able to use both as the end-user sees fit.</p>
-
-	<div id="highlightingExample" class="imgFrame">
-	  <img src="img/highlightingEditor.png" alt="The highlighting editor, demostrating both types of parametric filter types.">
-	  <div class="imgCaption">The highlighting editor, demostrating both types of parametric filter types.</div>
+	  <div id="highlightingExample" class="imgFrame">
+	    <img src="img/highlightingEditor.png" alt="The highlighting editor, demostrating both types of parametric filter types.">
+	    <div class="imgCaption">The highlighting editor, demostrating both types of parametric filter types.
+	    </div>
+	  </div>
 	</div>
-
 	<h3>Column Configuration</h3>
 	<p>Any meteorological parameter that is regularl reported in encoded formats may be displayed in its own column. The user may choose from a number of settings, such as the name displayed in the column header, horizontal alignment, numeric precision, column width, and the colorscale used.</p>
 
 	<p>These column configurations may be saved and re-loaded in a different table configuration to make the configuration of subsequent tables more convenient.</p>
-	
-	<h3>Colorscale Configuration</h3>
-	<p> There are three different types of colorscales supported in ObsMonitor: <i>range</i>, <i>gradient</i>, and <i>discrete</i>. Range and gradient colorscales are exclusively applied to numeric parameters such as temperature, relative humidity, and hourly rainfall. Discrete colorscales shade based on string equivalence and are applied to non-numeric parameters like geographic metadata.</p>
+	<div class="imgTextGroup">	  
+	  <h3>Colorscale Configuration</h3>
+	  <p> There are three different types of colorscales supported in ObsMonitor: <i>range</i>, <i>gradient</i>, and <i>discrete</i>. Range and gradient colorscales are exclusively applied to numeric parameters such as temperature, relative humidity, and hourly rainfall. Discrete colorscales shade based on string equivalence and are applied to non-numeric parameters like geographic metadata.</p>
 
-	<div id="colorScaleExample" class="imgFrame">
-	  <img src="img/differentColorscales.png" alt="Multiple types of colorscales, as defined in the columns editor." />
-	  <div class="imgCaption">The three types of colorscales previewed as part of the columns editor.</div>
+	  <div id="colorScaleExample" class="imgFrame">
+	    <img src="img/differentColorscales.png" alt="Multiple types of colorscales, as defined in the columns editor." />
+	    <div class="imgCaption">The three types of colorscales previewed as part of the columns editor.</div>
+	  </div>
 	</div>
-
 	<p>Range colorscales are defined as a stepwise numeric function that returns a defined color. Gradient colorscales define distinct numeric bounds to which a value is compared and a color is linearly interpolated. These two types are interconvertable. </p>
 
 	<h3>Multivariate Sorting</h3>
 	<p>Complex multivariate sorting is supported, with users able to sort the columns by any number of meteorological parameters. For example, a couple could sort the locations alphabetically by state with a secondary sorting criteria by state if they want. Sorting rules invariable follow a "nulls last" policy, where defined values, regardless of magninude, always appear first.</p>				
       </div>
       <div id="gageScatterplot" class="softwareProjectContainer">
+	<div class="imgTextGroup">
+	  <h3>GageScatterPlot</h3>
 
-	<h3>GageScatterPlot</h3>
-
-	<div id="scatterplotExample" class="imgFrame">
-	  <img src="img/scatterplotImg.png" alt="GageScatterplot in action!" />
-	  <div class="imgCaption">GageScatterplot showing differences between rain gages and gridded rainfall estimates. Gages outside the shaded area are those that differ by more than 10% from the gridded estimates, indicating further QC work may be necessary.</div>
+	  <div id="scatterplotExample" class="imgFrame">
+	    <img src="img/scatterplotImg.png" alt="GageScatterplot in action!" />
+	    <div class="imgCaption">GageScatterplot showing differences between rain gages and gridded rainfall estimates. Gages outside the shaded area are those that differ by more than 10% from the gridded estimates, indicating further QC work may be necessary.</div>
+	  </div>
+	  
+	  <p>GageScatterplot is a Java program designed to help visualize differences between gridded precipitation estimates and 24 hour rain gage measurements. It is the recipient of regional and local NWS Isaac Cline awards in data acquisition management, and is used by a majority of River Forecast Centers around the US.</p>
 	</div>
-	
-	<p>GageScatterplot is a Java program designed to help visualize differences between gridded precipitation estimates and 24 hour rain gage measurements. It is the recipient of regional and local NWS Isaac Cline awards in data acquisition management, and is used by a majority of River Forecast Centers around the US.</p>
-
 	<p>It was initially inspired by an earlier program written at West Gulf River Forecast Center which, while similar in functionality, was significantly slower and less flexible. It allows observations to be grouped by several different criteria -- state, county, nearest radar, gage network, and lat/lon bounds. Max/min bounds may also be set on both the gage and grid values. This aids the meteorologist on shift with zeroing in on regions that need extra quality control!</p>
 
 	<p>Each time the program is refreshed, it reads all of the latest reported rainfall observations and most up to date gridded estimates, performing a linear regression on the data to give an idea of how well the operational estimates match ground truth. On a typical day, it is used to make sure that r<sup>2</sup> &gt;= 0.9.</p>
@@ -110,19 +112,17 @@
       </div>
       <div id="hydroDataViewer" class="softwareProjectContainer">
 	<h3>HydroDataViewer</h3>
-	<div class="videoContainer">
-	  
+	<div class="videoContainer">	  
+	  <video id="florenceVideo" controls loop>
+	    <source src="vid/florenceAccumulation.mp4" type="video/mp4"></source>
+	  </video>
 	  <video id="michaelVideo" controls loop>
 	    <source src="vid/michaelAccumulation.mp4" type="video/mp4"></source>
 	  </video>
-	  <video id="florenceVideo" controls loop>
-	    <source src="vid/florenceAccumulation.mp4" type="video/mp4"></source>
-	  </video>		
 	  <div id="buttonContainer" class="buttonContainer">
-	    <div id="michaelButton" class="videoButton">Michael</div>
 	    <div id="florenceButton" class="videoButton">Florence</div>
+	    <div id="michaelButton" class="videoButton">Michael</div>
 	  </div>
-
 	</div>
 
 	<p><b>HydroDataViewer</b> is a program designed for the visualization of gridded precipitation datasets and point hydrometeorological data, used by several River Forecast Centers across the US. All of the source code and configuration files are written in Clojure, with the configuration files taking advantange of Clojure's homoiconicity to act as an easily parseable JSON-esque data structure.</p>
@@ -139,17 +139,18 @@
 
 	<p>Polygon-, polyline-, and point-based shapefiles are supported, with counties, rivers, and cities serving as an example of each. Users may select one field in the metadat to serve as the map label and as many fields as desired to appear on mouseover. Font customization is also provided in the form of font name, size, and color. The color and drawing order of the shapefiles may also be customized. Default settings can be set at both the site and user level, empowering individual users to define their own default map background settings if desired.</p>
 
-	<h3>Map Navigation</h3>
+	<div class="imgTextGroup">
+	  <h3>Map Navigation</h3>
 
-	<div id="zoomMenu" class="imgFrame">
-	  <img src="img/zoomMenu.png" alt="An example of a configured zoom menu." />
-	  <div class="imgCaption">
-	    An example of a configured zoom menu.
+	  <div id="zoomMenu" class="imgFrame">
+	    <img src="img/zoomMenu.png" alt="An example of a configured zoom menu." />
+	    <div class="imgCaption">
+	      An example of a configured zoom menu.
+	    </div>
 	  </div>
-	</div>
 
 	<p>Users may navigate to arbitrary points on the map using a number of different means - lat/lon coordinates, site IDs with locations defined in a local database, and querying the metadata of loaded shapefiles.</p>
-
+	</div>
 	<p>Additionally, there is a configurable tear-off menu where users can select from a list of pre-defined map extents. Like most other aspects of the program, this is customizable at both the site and office level!</p>
 
 	<h3>Exporting rainfall animations</h3>
@@ -157,26 +158,29 @@
 	<p>As seen in the top image, HydroDataViewer is also capable of exporting hour-by-hour time series animations of rainfall totals in both GIF and AVI formats. These were distributed by NWS offices on social media in the wake of the event.</p>
       </div>
       <div id="quickHydroBrief" class="softwareProjectContainer">
-	<h3>QuickHydroBrief</h3>
-	<div id="quickHydroBriefExample" class="imgFrame"> 
-	  <img src="img/quickHydroBrief.png" alt="QuickHydroBrief displaying tailwater stage data for Demopolis Lock in Alabama" />
-	  <div class="imgCaption">
-	    QuickHydroBrief displaying tailwater stage data for Demopolis Lock in Alabama</div>
+	<div class="imgTextGroup">
+	  <h3>QuickHydroBrief</h3>
+	  <div id="quickHydroBriefExample" class="imgFrame"> 
+	    <img src="img/quickHydroBrief.png" alt="QuickHydroBrief displaying tailwater stage data for Demopolis Lock in Alabama" />
+	    <div class="imgCaption">
+	      QuickHydroBrief displaying tailwater stage data for Demopolis Lock in Alabama</div>
+	  </div>
+	  <p>QuickHydroBrief is a Java based hydrograph display utility used by 25+ Weather Forecast Offices and River Forecast Centers across the National Weather Service created in mid-2018. It offers several advantages -- easy keyboard navigation between different river gage locations and basin groups, automatic pop-ups and audio alerts whenever river stages cross defined thresholds, and easy mouse-based removal of bad data when necessary.</p>
 	</div>
-	<p>QuickHydroBrief is a Java based hydrograph display utility used by 25+ Weather Forecast Offices and River Forecast Centers across the National Weather Service created in mid-2018. It offers several advantages -- easy keyboard navigation between different river gage locations and basin groups, automatic pop-ups and audio alerts whenever river stages cross defined thresholds, and easy mouse-based removal of bad data when necessary.</p>
 
 	<p>Each configurable river basin is divided into its own tab, with an "All Basins" tab always existing that displays all of the configured locations sorted by flood category. Beside each location is an icon indicating the current flood stage and forecast flood stage to aid in situational awareness. Users may toggle between each tab using the &larr; &amp; &rarr; keys and between sites in the left menu with the &uarr; &amp; &darr; keys.</p>
 	
 	<p>Data is updated with minimal latency whenever a user selects an individual site, and is retrieved by interfacing with a local PostgreSQL database. This means that whenever you view any given hydrograph, you can be sure that it is up to date!</p>
 
+
+	
+	<p>QuickHydroBrief maintains a cache of the most recent reading for each location. This cache is updated on a minute-to-minute basis. Whenever a new value is detected that crosses a significant threshold, a pop-up is displayed and an alarm is heard. Users may toggle this feature on and off both globally and on a site by site basis. Also, QuickHydroBrief supported customized sounds for each user.</p>
 	<div id="stageChangeExample" class="imgFrame">
 	  <img src="img/stageChange.png" alt="The dialog that appears whenever a stage change is detected." />
 	  <div class="imgCaption">
 	    The stage change dialog alerting the user that a river has gone from minor to moderate flood stage.
 	  </div>
 	</div>
-	
-	<p>QuickHydroBrief maintains a cache of the most recent reading for each location. This cache is updated on a minute-to-minute basis. Whenever a new value is detected that crosses a significant threshold, a pop-up is displayed and an alarm is heard. Users may toggle this feature on and off both globally and on a site by site basis. Also, QuickHydroBrief supported customized sounds for each user.</p>	      
       </div>
     </div>
     <div id="skills" class="contentContainer">

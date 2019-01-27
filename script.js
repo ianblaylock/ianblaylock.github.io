@@ -11,6 +11,8 @@ function initializeMenus() {
 	for (var i = 0; i < elems.length; i++) {
 	    elems[i].style.display = "none";}
     }
+
+    
     //menu1 buttons
     let aboutMeBtn = document.getElementById("aboutMeMenuItem");
     let projectsBtn = document.getElementById("softwareProjectsMenuItem");
@@ -32,6 +34,9 @@ function initializeMenus() {
     let gageScatterplot = document.getElementById("gageScatterplot");
     let hydroDataViewer = document.getElementById("hydroDataViewer");
     let quickHydroBrief = document.getElementById("quickHydroBrief");
+
+    //which is the selected menu2 item?
+    let selectedSoftwareProject = obsMonitor;
     
     function hideMenu2() {menu2.style.display = "none";}
     function showMenu2() { menu2.style.display = "block";}
@@ -39,7 +44,7 @@ function initializeMenus() {
     hideAllContentContainers();
     bio.style.display = "block";
     hideAllSoftwareProjectContainers();
-    
+    selectedSoftwareProject.style.display = "block";
     aboutMeBtn
 	.addEventListener("click",
 			  function() {hideMenu2();
@@ -50,6 +55,7 @@ function initializeMenus() {
 	.addEventListener("click",
 			  function() {showMenu2();
 				      hideAllContentContainers();
+				      selectedSoftwareProject.style.display = "blcock";
 				      projects.style.display = "block";
 				     });
     skillsBtn
@@ -62,23 +68,27 @@ function initializeMenus() {
     obsMonitorBtn
 	.addEventListener("click",
 			  function() {hideAllSoftwareProjectContainers();
+				      selectedSoftwareProject = obsMonitor;
 				      obsMonitor.style.display = "block";
 				     });
 
     gageScatterplotBtn
 	.addEventListener("click",
 			  function() {hideAllSoftwareProjectContainers();
+				      selectedSoftwareProject = gageScatterplot;
 				      gageScatterplot.style.display = "block";
 				     });
 
     hydroDataViewerBtn
 	.addEventListener("click",
 			  function() {hideAllSoftwareProjectContainers();
+				      selectedSoftwareProject = hydroDataViewer;
 				      hydroDataViewer.style.display = "block";
 				     });    
     quickHydroBriefBtn
 	.addEventListener("click",
 			  function() {hideAllSoftwareProjectContainers();
+				      selectedSoftwareProject = quickHydroBrief;
 				      quickHydroBrief.style.display = "block";
 				     });
 
@@ -86,14 +96,14 @@ function initializeMenus() {
 }
 
 document.getElementById("menu2").style.display = "none";
-
 initializeMenus();
 
-/*
+
+
 function initializeVideos() {
     let michaelVideo = document.getElementById("michaelVideo");
     let florenceVideo = document.getElementById("florenceVideo");
-    michaelVideo.style.display = "block";
+    florenceVideo.style.display = "block";
     let michaelButton = document.getElementById("michaelButton");
     let florenceButton = document.getElementById("florenceButton");
     
@@ -116,4 +126,4 @@ function initializeVideos() {
 }
 
 initializeVideos();
-*/
+
