@@ -38,7 +38,7 @@ function initializeMenus() {
     //which is the selected menu2 item?
     let selectedSoftwareProject = obsMonitor;
     
-    function hideMenu2() {menu2.style.display = "none";}
+    function hideMenu2() { menu2.style.display = "none";}
     function showMenu2() { menu2.style.display = "block";}
 
     hideAllContentContainers();
@@ -63,6 +63,7 @@ function initializeMenus() {
 			  function() {hideMenu2();
 				      hideAllContentContainers();
 				      skills.style.display = "block";
+				      skillScoreToSVG();
 				     });
 
     obsMonitorBtn
@@ -126,4 +127,29 @@ function initializeVideos() {
 }
 
 initializeVideos();
+
+var skillScoreValueMap = {"Java":9,
+			  "Clojure":9,
+			  "Perl":8,
+			  "Ruby":7};
+
+function skillScoreToSVG() {
+    let skills = document.getElementsByClassName("skill");    
+    let maxVal = 10;
+    for (var i = 0; i < skills.length; i++) {
+	let newContents = `<svg width="${skills[i].clientWidth}" height="${skills[i].clientHeight}">`;
+	let skillName = skills[i].getElementsByClassName("skillName")[0].innerHTML;
+	let scoreDiv = skills[i].getElementsByClassName("skillScore")[0];
+	let height = scoreDiv.clientHeight;
+	let width = scoreDiv.clientWidth;
+	let skillRank = skillScoreValueMap[skillName];
+	for (var j = 0; j < skillRank; j++) {
+	    newContents = newContents +
+		`<circle cx="${(j + 0.5) * (width / maxVal)}" cy="${height * 0.5}" r="${height * 0.5}"  fill="rgb(236,88,0)" />`;
+	}
+	newContents = newContents + "</svg>";
+	scoreDiv.innerHTML = newContents;
+    }
+}
+
 

@@ -145,26 +145,49 @@ body {
 #skillsSection h3, #resumeSection h3 {text-align: center; margin-left: auto; margin-right: auto}
 #resumeSection { float: left; }
 
-#workExperience {
+#workExperience {   
     border-style: dashed;
     border-color: #fff;
-    border-width: 0 0 2px 0px;
+    border-width: 0 0 1px 0px;   
 }
 
+.job {
+    padding-bottom: 1em;
+}
 
+.degree, .office {
+    font-size: 1.1em;
+    font-weight: bold;
+    font-decoration: underline;
+    margin-bottom: 0.5em;
+}
 
-.job {padding-bottom: 1em; border-color: #fff; border-style: solid; border-width: 1px}
-.degree, .office {font-size: 1.1em; font-weight: bold; font-decoration: underline;}
 .organization {}
 .timespan {left: 0px; float: right; font-style: italic}
 .organization, .jobtitle, .location, .timespan, .minor, .almamater { font-size: 0.8em;}
+
 .office, .organization, .jobtitle, .location {
     right: 0px;
     text-align: left;
 }
 
 .description {font-size: 0.9em;
-	      font-style: italic;}
+	      font-style: italic;
+	      text-align: justify}
+
+.skill {
+    padding: 0.5em; margin: 0;
+    height: 1em;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: auto;
+}
+
+.skillName {
+    text-align: right;
+    padding-right: 1em;
+}
+	      
 
 
 

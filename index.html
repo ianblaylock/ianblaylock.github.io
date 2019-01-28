@@ -185,8 +185,19 @@
     <div id="skills" class="contentContainer">
       <!-- here i need to do two parts: an svg-based "skills chart" and an education section -->
       <div id="skillsSection">
-	<h3>Dev Skills</h3>
-	
+	<h3>Languages, Etc.</h3>
+	<div class="skill">
+	  <div class="skillName">Java</div><div class="skillScore"></div>
+	</div>
+	<div class="skill">
+	  <div class="skillName">Clojure</div><div class="skillScore"></div>
+	</div>
+	<div class="skill">
+	  <div class="skillName">Ruby</div><div class="skillScore"></div>
+	</div>
+	<div class="skill">
+	  <div class="skillName">Perl</div><div class="skillScore"></div>
+	</div>
       </div>
       <div id="resumeSection">
 	<div id="workExperience">
@@ -198,7 +209,13 @@
 	    <div class="jobtitle">Hydrometeorological Analysis And Support Forecaster</div>
 	    <div class="location">Peachtree City, Georgia</div>
 	    
-	    <div class="description">Worked</div>
+	    <div class="description">
+	      <p>Designed, implemented, and maintained several programs used by dozens of National Weather Service offices.</p>	      
+	      <p>Extracted and mosaicked data from rapid deployment radar feeds in the wake of Hurricane Maria to maintain rainfall data for Puerto Rico.</p>
+	      <p>Designed procedures to retroactively calculate 24- and 6- hourly precipitation averages given any arbitrary basin shapefile. These procedures have been used to calibrate operational hydrologic forecast models as well as inform decision making by shellfish fishery operators.</p>
+	      <p>In the course of an afternoon, streamlined GIS tools by writing a tool which takes a list of river basin identifiers and outputs a map indicating locations at risk for significant river flooding.</p>
+	      <p>Created the official NOAA precipitation estimates for Hurricanes Harvey, Florence, Maria, Irma, Matthew, and Michael.</p>
+	    </div>
 	  </div>
 	  <div class="job">
 	    <div class="timespan">June 2012 - July 2015</div>
@@ -206,7 +223,13 @@
 	    <div class="organization">National Weather Service</div>
 	    <div class="jobtitle">Meteorologist Intern</div>
 	    <div class="location">Corpus Christi, Texas</div>
-	    <div class="description">Worked earlier</div>
+	    <div class="description">
+	      <p>Created archive display tools making it easier to find and display text products like forecast discussions, severe thunderstorm warnings, etc by date, project ID, and search strings.</p>
+	      <p>Overhauled the time and attendance methodology at the office to use a simple point and click interface.</p>
+	      <p>Developed version 1.0 of ObsMonitor, a program used to simplify the display of meteorological data from a variety of sources.</p>
+	      <p>Created a program that takes a CSV of decoded weather condititions and writes it to a DBF file used in an online surface observation map.</p>
+	      <p>Launched weather balloons and quality controlled the radiosonde-transmitted data.</p>
+	    </div>
 	  </div>
 	  <div class="job">
 	    <div class="timespan">June 2010 - August 2011</div>
@@ -215,7 +238,10 @@
 	    <div class="jobtitle">SCEP - Student Career Employment Program</div>
 	    <div class="location">Juneau, Alaska</div>
 
-	    <div class="description">Worked even earlier</div>	      
+	    <div class="description">
+	      <p>Created auto-updating cross-sections of forecast weather conditions along the Haines and Klondike highways for use by those in the transportation industry.</p>
+	      <p>Took manual river gage readings every morning at Mendenhall River.</p>	      
+	    </div>
 	  </div>
 	  <div class="job">
 	    <div class="timespan">Jan 2009 - May 2012</div>
@@ -224,7 +250,9 @@
 	    <div class="jobtitle">Research Assistant</div>
 	    <div class="location">Bowling Green, Kentucky</div>
 
-	    <div class="description">didn't do shit</div>
+	    <div class="description">
+	      <p>Assisted in the installation and configuration of the Weather Research and Forecast Model (WRF) for use in local re-analysis of significant weather events.</p>
+	    </div>
 	  </div>
 	</div>
 	<div id="education">
@@ -233,58 +261,9 @@
 	  <div class="degree">Bachelor's of Science: Meteorology</div>
 	  <div class="minor">Minor in Mathematics</div>
 	  <div class="almamater">Western Kentucky University</div>
-	  <div class="location">Bowling Green, Kentucky</div>
-	  
+	  <div class="location">Bowling Green, Kentucky</div>	  
 	</div>	
       </div>
-      
-      <!--
-      <div id="resumeSection">
-	<div id="workExperience">
-	  <div class="job">
-	    <div class="office">Southeast River Forecast Center</div>
-	    <div class="organization">National Weather Service</div>
-	    <div class="jobtitle">Hydrometeorological Analysis And Support Forecaster</div>
-	    <div class="location">Peachtree City, Georgia</div>
-	    <div class="timespan">July 2015 - Present</div>
-	    <div class="description">Worked</div>	    
-	  </div>
-	  <div class="job">
-	    <div class="office">Weather Forecast Office - Corpus Christi</div>
-	    <div class="organization">National Weather Service</div>
-	    <div class="jobtitle">Meteorologist Intern</div>
-	    <div class="location">Corpus Christi, Texas</div>
-	    <div class="timespan">June 2012 - July 2015</div>
-	    <div class="description">Worked earlier</div>
-	  </div>
-	  <div class="job">
-	    <div class="office">Weather Forecast Office - Juneau</div>
-	    <div class="organization">National Weather Service</div>
-	    <div class="jobtitle">SCEP - Student Career Employment Program</div>
-	    <div class="location">Juneau, Alaska</div>
-	    <div class="timespan">June 2010 - August 2011</div>
-	    <div class="description">Worked even earlier</div>	      
-	  </div>
-	  <div class="job">
-	    <div class="office">Climate Research Lab</div>
-	    <div class="organization">Western Kentucky University</div>
-	    <div class="jobtitle">Research Assistant</div>
-	    <div class="location">Bowling Green, Kentucky</div>
-	    <div class="timespan">Jan 2009 - May 2012</div>
-	    <div class="description">didn't do shit</div>
-	  </div>
-	</div>
-	<div id="education">
-	  <div class="degree">Bachelor's of Science: Meteorology</div>
-	  <div class="minor">Minor in Mathematics</div>
-	  <div class="almamater">Western Kentucky University</div>
-	  <div class="location">Bowling Green, Kentucky</div>
-	  <div class="timespan">Aug 2008 - May 2012</div>	  
-	</div>	
-      </div>
-
-    </div>
-    -->
   </body>
   <script src="script.js"></script>
 </html>
