@@ -128,28 +128,40 @@ function initializeVideos() {
 
 initializeVideos();
 
-var skillScoreValueMap = {"Java":9,
-			  "Clojure":9,
-			  "Perl":8,
-			  "Ruby":7};
 
 function skillScoreToSVG() {
-    let skills = document.getElementsByClassName("skill");    
-    let maxVal = 10;
+    var skillScoreValueMap = {"Java":9,
+			      "Clojure":9,
+			      "Perl":8,
+			      "Ruby":7};
+
+    function colorOnGradient(bound1,bound2,j) {
+	let p = (j - bound1.x) / (bound2.x - bound1.x);
+	let newRed = Math.round(bound1.red * (1 - p) + bound2.red * p);
+	let newGreen = Math.round(bound1.green * (1 - p) + bound2.green * p);
+	let newBlue = Math.round(bound1.blue * (1 - p) + bound2.blue * p);
+	return `rgb(${newRed},${newGreen},${newBlue})`;
+    }
+
+    let skills = document.getElementsByClassName("skill");
     for (var i = 0; i < skills.length; i++) {
-	let newContents = `<svg width="${skills[i].clientWidth}" height="${skills[i].clientHeight}">`;
 	let skillName = skills[i].getElementsByClassName("skillName")[0].innerHTML;
 	let scoreDiv = skills[i].getElementsByClassName("skillScore")[0];
-	let height = scoreDiv.clientHeight;
-	let width = scoreDiv.clientWidth;
 	let skillRank = skillScoreValueMap[skillName];
+	let svg = `<svg viewBox="0 0 10 1" onresize="skillScoreToSVG()">`;
 	for (var j = 0; j < skillRank; j++) {
-	    newContents = newContents +
-		`<circle cx="${(j + 0.5) * (width / maxVal)}" cy="${height * 0.5}" r="${height * 0.5}"  fill="rgb(236,88,0)" />`;
+	    let newColor = (j <= 5) ?
+		colorOnGradient({x: 0, red:236, green:88, blue:0},
+				{x: 5, red:236, green:236, blue:0},j) :
+		colorOnGradient({x: 5, red:236, green:236, blue:0},
+				{x: 10, red:88, green:236, blue:0}, j);
+		
+	    svg = svg +
+		`<circle cx="${j+0.5}" cy="0.4" r="0.35" fill="${newColor}" />`;
 	}
-	newContents = newContents + "</svg>";
-	scoreDiv.innerHTML = newContents;
+	svg = svg + "</svg>";
+	scoreDiv.innerHTML = svg;
     }
+	
 }
-
 

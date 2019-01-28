@@ -179,14 +179,17 @@ body {
     padding: 0.5em; margin: 0;
     height: 1em;
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 25% 75%;
     grid-template-rows: auto;
 }
 
 .skillName {
     text-align: right;
     padding-right: 1em;
+    margin-top: auto; margin-bottom: auto;
 }
+
+svg {height: 100%; margin: auto;}
 	      
 
 
