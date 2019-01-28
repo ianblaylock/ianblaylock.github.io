@@ -141,9 +141,9 @@ body {
 
 #skills > div { width: 50%;  padding: 0; margin: 0;}
 
-#skillsSection {float: right; }
+#skillsSection {float: left; width: 45%; padding-right: 5%;}
 #skillsSection h3, #resumeSection h3 {text-align: center; margin-left: auto; margin-right: auto}
-#resumeSection { float: left; }
+#resumeSection { float: right; }
 
 #workExperience {   
     border-style: dashed;
@@ -186,7 +186,13 @@ body {
 .skillName {
     text-align: right;
     padding-right: 1em;
+    padding-bottom: 0.5em;
     margin-top: auto; margin-bottom: auto;
+}
+
+#skillsSection h4 { 
+    margin: auto; text-align: center;
+    padding-top: 1em;
 }
 
 svg {height: 100%; margin: auto;}

@@ -130,10 +130,14 @@ initializeVideos();
 
 
 function skillScoreToSVG() {
-    var skillScoreValueMap = {"Java":9,
-			      "Clojure":9,
-			      "Perl":8,
-			      "Ruby":7};
+    var skillScoreValueMap = {"Java":10, "Clojure":10, "Perl":9,
+			      "Ruby":7, "Python":7, "FORTRAN":5,
+			      "Bash":5, "Julia":4, "SQL":8,
+			      "PostgreSQL":9, "MySQL":7, "Javascript": 7,
+			      "Subversion":9, "Git": 6, "Swing/AWT": 10,
+			      "Tk": 6,"HTML": 8,"CSS": 8, "Elm": 3,
+			      "FL Studio": 10, "Audacity":8, "Overtone":10,
+			      "javax.sound":8};
 
     function colorOnGradient(bound1,bound2,j) {
 	let p = (j - bound1.x) / (bound2.x - bound1.x);
