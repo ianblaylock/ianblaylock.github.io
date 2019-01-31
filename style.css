@@ -17,6 +17,10 @@
 html, body { min-height: 100%; margin: 0; padding: 0;}
 html { font-size: calc(0.8 * (0.8em + 0.7vw));}
 
+@media screen and (min-width: 1200px) {
+    html { font-size: 20px;}
+}
+
 body {
     color: var(--main-text-color);
     background-color: var(--background-color);
@@ -87,10 +91,11 @@ body {
 }
 
 #myFace {
-	width: 25vw; height: auto;
-	float: left; margin: 10px;
-	border-radius: 10px;
-	margin-left: 1vw;
+    width: 25vw; height: auto;
+    max-width: 230px;
+    float: left; margin: 10px;
+    border-radius: 10px;
+    margin-left: 1vw;
 }
 
 .imgTextGroup .imgFrame, .videoContainer {
@@ -139,55 +144,15 @@ body {
 
 #zoomMenu { width: 20%;}
 
-#skills > div { width: 50%;  padding: 0; margin: 0;}
-
-#skillsSection {float: left; width: 45%; padding-right: 5%;}
 #skillsSection h3, #resumeSection h3 {text-align: center; margin-left: auto; margin-right: auto}
-#resumeSection { float: right; }
-
-#workExperience {   
-    border-style: dashed;
-    border-color: #fff;
-    border-width: 0 0 1px 0px;   
-}
-
-.job {
-    padding-bottom: 1em;
-}
-
-.degree, .office {
-    font-size: 1.1em;
-    font-weight: bold;
-    font-decoration: underline;
-    margin-bottom: 0.5em;
-}
-
-.organization {}
-.timespan {left: 0px; float: right; font-style: italic}
-.organization, .jobtitle, .location, .timespan, .minor, .almamater { font-size: 0.8em;}
-
-.office, .organization, .jobtitle, .location {
-    right: 0px;
-    text-align: left;
-}
-
-.description {font-size: 0.9em;
-	      font-style: italic;
-	      text-align: justify}
-
-.skill {
-    padding: 0.5em; margin: 0;
-    height: 1em;
+@media screen and (min-width: 450px) {
+    
+.skill { /* for skinny displays*/
+    padding: 0.5em; margin: auto;
+    height: 2em;
     display: grid;
-    grid-template-columns: 25% 75%;
-    grid-template-rows: auto;
-}
-
-.skillName {
-    text-align: right;
-    padding-right: 1em;
-    padding-bottom: 0.5em;
-    margin-top: auto; margin-bottom: auto;
+    grid-template-columns: auto;
+    grid-template-rows: 50% 50%;
 }
 
 #skillsSection h4 { 
@@ -195,7 +160,45 @@ body {
     padding-top: 1em;
 }
 
-svg {height: 100%; margin: auto;}
+
+.skillScore, .skillName {
+    margin: 0; padding-left: 0.5em; 
+}
+
+.skillScore {padding-top: 0.25em;}
+
+svg {width: 80%; height: auto; }
+
+@media screen and (min-width: 875px) {/*if we're a bit bigger*/
+
+    .skillName {
+	text-align: center;
+	margin: auto;
+	padding: 0;
+    }
+
+    /*svg {height: 100%; margin: auto;}*/
+    .skill {
+	padding: 0.5em; margin: 0;
+	height: 1em;
+	display: grid;
+	grid-template-columns: 25% 75%;
+	grid-template-rows: auto;
+    }
+
+    .skillName {
+	text-align: right;
+	padding-right: 1em;
+	padding-bottom: 0.5em;
+	margin-top: auto; margin-bottom: auto;
+    }
+
+
+}
+
+
+
+
 	      
 
 

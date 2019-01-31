@@ -152,7 +152,7 @@ function skillScoreToSVG() {
 	let skillName = skills[i].getElementsByClassName("skillName")[0].innerHTML;
 	let scoreDiv = skills[i].getElementsByClassName("skillScore")[0];
 	let skillRank = skillScoreValueMap[skillName];
-	let svg = `<svg viewBox="0 0 10 1" onresize="skillScoreToSVG()">`;
+	let svg = `<svg viewBox="0 0 12 1.2" onresize="skillScoreToSVG()">`;
 	for (var j = 0; j < skillRank; j++) {
 	    let newColor = (j <= 5) ?
 		colorOnGradient({x: 0, red:236, green:88, blue:0},
